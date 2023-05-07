@@ -8,12 +8,14 @@
 ## SavedVariablesPerCharacter: BagSlots
 ## SavedVariablesPerCharacter: RestedBar
 ## SavedVariablesPerCharacter: ReloadUI
+## SavedVariablesPerCharacter: ListAddons
 
 # UI stuff
 settings.lua
 
 # Commands
 reload.lua
+addons.lua
 align.lua
 
 # Tweaks

@@ -15,7 +15,7 @@ frame:SetScript("OnEvent", function()
         end
 
         -- Registers the slash commands.
-        if ReloadUI["enabled"] then
+        if ReloadUI and ReloadUI["enabled"] then
             SLASH_TweeksReloadUI1 = "/reloadui"
             SLASH_TweeksReloadUI2 = "/reload"
             SLASH_TweeksReloadUI3 = "/rl"
