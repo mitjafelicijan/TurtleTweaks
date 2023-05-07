@@ -4,25 +4,21 @@
 ## Notes: A bunch of tweaks for Turtle WoW.
 ## Version: 1.0
 
+## SavedVariablesPerCharacter: Commands
 ## SavedVariablesPerCharacter: LootAtMouse
 ## SavedVariablesPerCharacter: BagSlots
 ## SavedVariablesPerCharacter: RestedBar
-## SavedVariablesPerCharacter: ReloadUI
-## SavedVariablesPerCharacter: ListAddons
-
-# UI stuff
-settings.lua
 
 # Commands
-reload.lua
-addons.lua
-align.lua
+commands.lua
 
 # Tweaks
 rested.lua
 loot.lua
-worldmap.lua
 bagslots.lua
 
 # Experimental
 experimental.lua
+
+# UI stuff
+settings.lua

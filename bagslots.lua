@@ -5,15 +5,15 @@
 local frame = CreateFrame("FRAME")
 
 frame:RegisterEvent("ADDON_LOADED")
-frame:RegisterEvent('PLAYER_LOGIN')
-frame:RegisterEvent('BAG_UPDATE')
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:RegisterEvent("BAG_UPDATE")
 
 frame:SetScript("OnEvent", function()
     -- Fallback to default behavior if the user has disabled this feature.
     if event == "ADDON_LOADED" then
         if BagSlots == nil then
             BagSlots = {}
-            BagSlots["enabled"] = true
+            BagSlots["enabled"] = false
             BagSlots["config"] = {}
         end
     end
@@ -51,3 +51,33 @@ frame:SetScript("OnEvent", function()
         end
     end
 end)
+
+-- Holds all the UI elements for settings.
+BagSlotsUI = {}
+BagSlotsUI["enabled"] = nil
+
+BagSlotsUI.form = function(container, verticalOffset)
+    BagSlotsUI["enabled"] = CreateFrame("CheckButton", "Checkbox", container, "UICheckButtonTemplate")
+    BagSlotsUI["enabled"]:SetPoint("TOPLEFT", 20, verticalOffset)
+    BagSlotsUI["enabled"]:SetChecked(BagSlots["enabled"])
+
+    local titleLabel = BagSlotsUI["enabled"]:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    titleLabel:SetPoint("LEFT", BagSlotsUI["enabled"], "RIGHT", 10, 7)
+    titleLabel:SetText("Empty bag slots counter")
+
+    local descriptionLabel = BagSlotsUI["enabled"]:CreateFontString("Status", "LOW", "GameFontHighlightSmall")
+    descriptionLabel:SetPoint("LEFT", BagSlotsUI["enabled"], "RIGHT", 10, -7)
+    descriptionLabel:SetText("Displays the number of free bag slots on the backpack button.")
+end
+
+BagSlotsUI.save = function()
+    BagSlots["enabled"] = (BagSlotsUI["enabled"]:GetChecked() and true or false)
+end
+
+BagSlotsUI.cancel = function()
+    BagSlotsUI["enabled"]:SetChecked(BagSlots["enabled"])
+end
+
+BagSlotsUI.reset = function()
+    BagSlots["enabled"] = false
+end

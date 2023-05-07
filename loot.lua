@@ -11,7 +11,7 @@ frame:SetScript("OnEvent", function()
     if event == "ADDON_LOADED" then
         if LootAtMouse == nil then
             LootAtMouse = {}
-            LootAtMouse["enabled"] = true
+            LootAtMouse["enabled"] = false
             LootAtMouse["config"] = {}
         end
     end
@@ -28,3 +28,33 @@ frame:SetScript("OnEvent", function()
         end
     end
 end)
+
+-- Holds all the UI elements for settings.
+LootAtMouseUI = {}
+LootAtMouseUI["enabled"] = nil
+
+LootAtMouseUI.form = function(container, verticalOffset)
+    LootAtMouseUI["enabled"] = CreateFrame("CheckButton", "Checkbox", container, "UICheckButtonTemplate")
+    LootAtMouseUI["enabled"]:SetPoint("TOPLEFT", 20, verticalOffset)
+    LootAtMouseUI["enabled"]:SetChecked(LootAtMouse["enabled"])
+
+    local titleLabel = LootAtMouseUI["enabled"]:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    titleLabel:SetPoint("LEFT", LootAtMouseUI["enabled"], "RIGHT", 10, 7)
+    titleLabel:SetText("Loot window at mouse cursor")
+
+    local descriptionLabel = LootAtMouseUI["enabled"]:CreateFontString("Status", "LOW", "GameFontHighlightSmall")
+    descriptionLabel:SetPoint("LEFT", LootAtMouseUI["enabled"], "RIGHT", 10, -7)
+    descriptionLabel:SetText("Opens the loot window at the current cursor position.")
+end
+
+LootAtMouseUI.save = function()
+    LootAtMouse["enabled"] = (LootAtMouseUI["enabled"]:GetChecked() and true or false)
+end
+
+LootAtMouseUI.cancel = function()
+    LootAtMouseUI["enabled"]:SetChecked(LootAtMouse["enabled"])
+end
+
+LootAtMouseUI.reset = function()
+    LootAtMouse["enabled"] = false
+end

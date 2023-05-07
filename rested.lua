@@ -28,7 +28,7 @@ frame:SetScript("OnEvent", function()
     if event == "ADDON_LOADED" then
         if RestedBar == nil then
             RestedBar = {}
-            RestedBar["enabled"] = true
+            RestedBar["enabled"] = false
             RestedBar["config"] = {}
             RestedBar["config"]["position"] = "top"
         end
@@ -95,3 +95,34 @@ frame:SetScript("OnUpdate", function()
         end
     end
 end)
+
+-- Holds all the UI elements for settings.
+RestedBarUI = {}
+RestedBarUI["enabled"] = nil
+
+RestedBarUI.form = function(container, verticalOffset)
+    RestedBarUI["enabled"] = CreateFrame("CheckButton", "Checkbox", container, "UICheckButtonTemplate")
+    RestedBarUI["enabled"]:SetPoint("TOPLEFT", 20, verticalOffset)
+    RestedBarUI["enabled"]:SetChecked(RestedBar["enabled"])
+
+    local titleLabel = RestedBarUI["enabled"]:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    titleLabel:SetPoint("LEFT", RestedBarUI["enabled"], "RIGHT", 10, 7)
+    titleLabel:SetText("Rested bar on player unit frame")
+
+    local descriptionLabel = RestedBarUI["enabled"]:CreateFontString("Status", "LOW", "GameFontHighlightSmall")
+    descriptionLabel:SetPoint("LEFT", RestedBarUI["enabled"], "RIGHT", 10, -7)
+    descriptionLabel:SetText("Displays the current rested percentage on the player unit frame.")
+end
+
+RestedBarUI.save = function()
+    RestedBar["enabled"] = (RestedBarUI["enabled"]:GetChecked() and true or false)
+end
+
+RestedBarUI.cancel = function()
+    print("Rested bar settings canceled.")
+    RestedBarUI["enabled"]:SetChecked(RestedBar["enabled"])
+end
+
+RestedBarUI.reset = function()
+    RestedBar["enabled"] = false
+end
