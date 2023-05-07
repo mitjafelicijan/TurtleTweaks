@@ -1,0 +1,26 @@
+## Interface: 11200
+## Title: TurtleTweaks
+## Author: Mitja Felicijan (m@mitjafelicijan.com)
+## Notes: A bunch of tweaks for Turtle WoW.
+## Version: 1.0
+
+## SavedVariablesPerCharacter: LootAtMouse
+## SavedVariablesPerCharacter: BagSlots
+## SavedVariablesPerCharacter: RestedBar
+## SavedVariablesPerCharacter: ReloadUI
+
+# UI stuff
+settings.lua
+
+# Commands
+reload.lua
+align.lua
+
+# Tweaks
+rested.lua
+loot.lua
+worldmap.lua
+bagslots.lua
+
+# Experimental
+experimental.lua
