@@ -43,7 +43,7 @@ frame:SetScript("OnEvent", function()
             statusBar:SetWidth(100)
             statusBar:SetHeight(12)
             statusBar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
-            statusBar:SetStatusBarColor(255, 0, 255)
+            statusBar:SetStatusBarColor(0, 255, 255)
 
             statusBar.bg = statusBar:CreateTexture(nil, "BACKGROUND")
             statusBar.bg:SetAllPoints(statusBar)
