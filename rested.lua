@@ -119,7 +119,6 @@ RestedBarUI.save = function()
 end
 
 RestedBarUI.cancel = function()
-    print("Rested bar settings canceled.")
     RestedBarUI["enabled"]:SetChecked(RestedBar["enabled"])
 end
 
