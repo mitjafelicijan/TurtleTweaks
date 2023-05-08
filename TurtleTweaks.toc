@@ -2,7 +2,7 @@
 ## Title: TurtleTweaks
 ## Author: Mitja Felicijan (m@mitjafelicijan.com)
 ## Notes: A bunch of tweaks for Turtle WoW.
-## Version: 1.0
+## Version: 0.1
 
 ## SavedVariablesPerCharacter: Commands
 ## SavedVariablesPerCharacter: LootAtMouse
