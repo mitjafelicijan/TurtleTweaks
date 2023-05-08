@@ -1,21 +1,27 @@
 ## Interface: 11200
-## Title: TurtleTweaks
+## Title: VanillaTweaks
 ## Author: Mitja Felicijan (m@mitjafelicijan.com)
-## Notes: A bunch of tweaks for Turtle WoW.
+## Notes: A bunch of tweaks for Vanilla WoW.
 ## Version: 0.2
 
 ## SavedVariablesPerCharacter: Commands
 ## SavedVariablesPerCharacter: LootAtMouse
 ## SavedVariablesPerCharacter: BagSlots
 ## SavedVariablesPerCharacter: RestedBar
+## SavedVariablesPerCharacter: OpenMail
 
 # Commands
 commands.lua
 
 # Tweaks
-rested.lua
-loot.lua
-bagslots.lua
+rested-bar.lua
+loot-at-mouse.lua
+bag-slots.lua
+camera-distance.lua
+
+# Work in progress
+# open-all-mail.lua
+# worldmap-window.lua
 
 # Experimental
 experimental.lua

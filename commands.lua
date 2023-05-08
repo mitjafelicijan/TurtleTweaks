@@ -44,11 +44,11 @@ frame.listAddons = function()
 
     SlashCmdList["TweeksAddons"] = function(msg, editbox)
         local numAddOns = GetNumAddOns()
-        print("Loaded Addons (" .. numAddOns .. "):")
+        DEFAULT_CHAT_FRAME:AddMessage("Loaded Addons (" .. numAddOns .. "):")
         for i = 1, numAddOns do
             local name, _, _, _, _, _, loaded = GetAddOnInfo(i)
             if loaded then
-                print(" - " .. name)
+                DEFAULT_CHAT_FRAME:AddMessage(" - " .. name)
             end
         end
     end
@@ -63,7 +63,7 @@ frame.alignGrid = function()
     local quadSize = 64
     local lineWeight = 1.1
     local primaryLinesAlpha = 1.0
-    local secondaryLinesAlpha = 0.7
+    local secondaryLinesAlpha = 0.5
 
     function generateGrid()
         grid = CreateFrame("Frame", nil, UIParent)
@@ -75,25 +75,23 @@ frame.alignGrid = function()
         local ratio = windowWidth / GetScreenHeight()
         local windowHeight = GetScreenHeight() * ratio * 2
 
-        function drawVerticalLine(centerOffset, r, g, b, a)
+        function drawVerticalLine(centerOffset, r, g, b, a, sizeMultiplier)
+            sizeMultiplier = sizeMultiplier or 1
             local tex = grid:CreateTexture(nil, "BACKGROUND")
             tex:SetTexture(r, g, b, a)
-            tex:SetWidth(lineWeight)
+            tex:SetWidth(lineWeight * sizeMultiplier)
             tex:SetHeight(windowHeight)
             tex:SetPoint("CENTER", grid, "CENTER", centerOffset, 0)
         end
 
-        function drawHorizontalLine(centerOffset, r, g, b, a)
+        function drawHorizontalLine(centerOffset, r, g, b, a, sizeMultiplier)
+            sizeMultiplier = sizeMultiplier or 1
             local tex = grid:CreateTexture(nil, "BACKGROUND")
             tex:SetTexture(r, g, b, a)
             tex:SetWidth(windowHeight)
-            tex:SetHeight(lineWeight)
+            tex:SetHeight(lineWeight * sizeMultiplier)
             tex:SetPoint("CENTER", grid, "CENTER", 0, centerOffset)
         end
-
-        -- Drawing center lines.
-        drawVerticalLine(0, 1, 0, 1, primaryLinesAlpha)
-        drawHorizontalLine(0, 1, 0, 1, primaryLinesAlpha)
 
         -- Drawing other vertical lines.
         local verticalSteps = math.ceil(windowWidth / quadSize)
@@ -110,6 +108,14 @@ frame.alignGrid = function()
             drawHorizontalLine(offset, 0, 0, 0, secondaryLinesAlpha)
             drawHorizontalLine(-offset, 0, 0, 0, secondaryLinesAlpha)
         end
+
+        -- Drawing center lines.
+        drawVerticalLine(0, 1, 1, 0, primaryLinesAlpha, 2)
+        drawHorizontalLine(0, 1, 1, 0, primaryLinesAlpha, 2)
+        drawVerticalLine(quadSize * 3, 1, 0, 1, secondaryLinesAlpha)
+        drawVerticalLine(-quadSize * 3, 1, 0, 1, secondaryLinesAlpha)
+        drawHorizontalLine(quadSize * 3, 1, 0, 1, secondaryLinesAlpha)
+        drawHorizontalLine(-quadSize * 3, 1, 0, 1, secondaryLinesAlpha)
     end
 
     -- Create grid in case it doesn't exist.

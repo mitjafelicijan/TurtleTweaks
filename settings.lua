@@ -1,5 +1,5 @@
 local maxWidth = 500
-local maxHeight = 280
+local maxHeight = 400 -- 280
 local alreadyLoaded = false
 
 local settings = CreateFrame("Frame", "TurtleTweaksGUI", UIParent)
@@ -54,6 +54,7 @@ settings:SetScript("OnEvent", function()
             RestedBarUI.cancel()
             LootAtMouseUI.cancel()
             CommandsUI.cancel()
+            CameraDistanceUI.cancel()
 
             -- Hide the settings frame.
             settings:Hide()
@@ -70,6 +71,7 @@ settings:SetScript("OnEvent", function()
             RestedBarUI.save()
             LootAtMouseUI.save()
             CommandsUI.save()
+            CameraDistanceUI.save()
 
             -- Reload the UI to apply the changes.
             ConsoleExec("reloadui")
@@ -86,6 +88,7 @@ settings:SetScript("OnEvent", function()
             RestedBarUI.reset()
             LootAtMouseUI.reset()
             CommandsUI.reset()
+            CameraDistanceUI.reset()
 
             -- Reload the UI to apply the changes.
             ConsoleExec("reloadui")
@@ -118,5 +121,6 @@ settings:SetScript("OnEvent", function()
         RestedBarUI.form(settings.container, -90)
         LootAtMouseUI.form(settings.container, -130)
         CommandsUI.form(settings.container, -170)
+        CameraDistanceUI.form(settings.container, -270)
     end
 end)

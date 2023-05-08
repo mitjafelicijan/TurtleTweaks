@@ -1,6 +1,8 @@
 -- Opens the loot window at the current cursor position.
 -- Author: Mitja Felicijan (m@mitjafelicijan.com)
 
+-- FIXME: Close target frame when opening loot window.
+
 local frame = CreateFrame("FRAME")
 
 frame:RegisterEvent("ADDON_LOADED")
