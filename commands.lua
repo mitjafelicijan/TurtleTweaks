@@ -1,6 +1,7 @@
 -- Adds the following commands that lists:
 -- * /addons: all loaded addons.
 -- * /reloadui, /reload, and /rl: reloads the UI.
+-- * /align: adds a grid to the screen.
 -- Author: Mitja Felicijan (m@mitjafelicijan.com)
 
 local frame = CreateFrame("FRAME")
