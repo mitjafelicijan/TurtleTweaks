@@ -2,7 +2,7 @@
 ## Title: VanillaTweaks
 ## Author: Mitja Felicijan (m@mitjafelicijan.com)
 ## Notes: A bunch of tweaks for Vanilla WoW.
-## Version: 0.2
+## Version: 0.3
 
 ## SavedVariablesPerCharacter: Commands
 ## SavedVariablesPerCharacter: LootAtMouse
