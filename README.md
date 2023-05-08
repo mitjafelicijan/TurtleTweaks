@@ -15,6 +15,16 @@ Please note that none of the options are enabled by default, and you will need
 to manually opt-in to each one. I designed it this way to align with the 
 vanilla experience and avoid forcing pre-selected preferences on users.
 
+## Compatibility
+
+This addon works with the following clients:
+- World of Warcraft (client version 1.12 / TurtleWoW)
+- World of Warcraft (client version 1.13.2 / Classic)
+- World of Warcraft (client version 2.4.3 / The Burning Crusade)
+- World of Warcraft (client version 3.3.5a / Wrath of the Lich King)
+
+I haven't tested it with any other clients, but it may work with others.
+
 ## Installation
 
 1. Download the latest release from the Releases.
