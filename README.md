@@ -40,3 +40,25 @@ I haven't tested it with any other clients, but it may work with others.
 - Adds a bunch of slash commands for various things:
   - `/addons` - List all currently loaded addons
   - `/reloadui`, `/reload`, `/rl` - Reload the UI
+
+## Special Thanks
+
+- [Shagu](https://shagu.org/) for creating [ShaguTweaks](https://shagu.org/ShaguTweaks/), which has been a source of inspiration for me.
+- [Turtle WoW](https://turtle-wow.org/) for creating a great vanilla WoW server.
+- [Blizzard Entertainment](https://www.blizzard.com/) for creating World of Warcraft.
+- [The WoW AddOn Community](https://www.curseforge.com/wow/addons) for creating and maintaining addons.
+
+## Additional inspiration
+
+- https://github.com/anzz1/FreeBagSlots
+- https://github.com/hazlema/Rested
+
+## Contributing
+
+If you would like to contribute to this project, please feel free to submit a
+[pull request](https://github.com/mitjafelicijan/TurtleTweaks/pulls).
+I will review it as soon as I can.
+
+## License
+
+This project is licensed under the BSD 2-Clause License - see the [LICENSE](LICENSE) file for details.
