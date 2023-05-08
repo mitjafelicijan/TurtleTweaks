@@ -1,6 +1,6 @@
 # TurtleTweaks
 
-World of Warcraft (client version 1.12 / TurtleWoW) Tweaks and Enhancements addon.
+**World of Warcraft Tweaks and Enhancements addon.**
 
 **Consideration:** Please note that this addon is not designed to compete with 
 any other addon. It is simply a compilation of tweaks and enhancements that I 
