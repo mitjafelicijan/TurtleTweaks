@@ -10,6 +10,7 @@ World of Warcraft (client version 1.12 / TurtleWoW) Tweaks and Enhancements addo
 
 - Rested XP display in the Player unit frame.
 - Displays number of free bag slots in the backpack button.
+- Opens loot window at current mouse position.
 - Adds a bunch of slash commands for various things:
   - `/addons` - List all currently loaded addons
   - `/reloadui`, `/reload`, `/rl` - Reload the UI
