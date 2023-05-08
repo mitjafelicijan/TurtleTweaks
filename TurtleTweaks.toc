@@ -1,5 +1,5 @@
 ## Interface: 11200
-## Title: VanillaTweaks
+## Title: TurtleTweaks
 ## Author: Mitja Felicijan (m@mitjafelicijan.com)
 ## Notes: A bunch of tweaks for Vanilla WoW.
 ## Version: 0.3

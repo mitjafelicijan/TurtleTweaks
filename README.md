@@ -1,4 +1,4 @@
-# VanillaTweaks
+# TurtleTweaks
 
 **World of Warcraft Tweaks and Enhancements addon.**
 
@@ -19,6 +19,8 @@ vanilla experience and avoid forcing pre-selected preferences on users.
 
 This addon works with the following clients:
 - World of Warcraft (client version 1.12 / TurtleWoW)
+
+This addon may work with the following clients:
 - World of Warcraft (client version 1.13.2 / Classic)
 - World of Warcraft (client version 2.4.3 / The Burning Crusade)
 - World of Warcraft (client version 3.3.5a / Wrath of the Lich King)
@@ -29,7 +31,7 @@ I haven't tested it with any other clients, but it may work with others.
 
 1. Download the latest release from the Releases.
 2. Extract the contents of the archive into your `World of Warcraft\Interface\AddOns` folder.
-3. Rename the extracted folder to `VanillaTweaks` (remove the version number).
+3. Rename the extracted folder to `TurtleTweaks` (remove the version number).
 4. Restart the game client.
 
 ## Features
@@ -66,7 +68,7 @@ I haven't tested it with any other clients, but it may work with others.
 ## Contributing
 
 If you would like to contribute to this project, please feel free to submit a
-[pull request](https://github.com/mitjafelicijan/VanillaTweaks/pulls).
+[pull request](https://github.com/mitjafelicijan/TurtleTweaks/pulls).
 I will review it as soon as I can.
 
 ## License

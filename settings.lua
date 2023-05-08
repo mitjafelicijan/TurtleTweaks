@@ -1,8 +1,8 @@
 local maxWidth = 500
-local maxHeight = 400 -- 280
+local maxHeight = 360
 local alreadyLoaded = false
 
-local settings = CreateFrame("Frame", "VanillaTweaksGUI", UIParent)
+local settings = CreateFrame("Frame", "TurtleTweaksGUI", UIParent)
 
 settings:RegisterEvent("ADDON_LOADED")
 
@@ -27,7 +27,7 @@ settings:SetScript("OnEvent", function()
         })
 
         -- Add a title to the frame.
-        settings.title = CreateFrame("Frame", "VanillaTweaksGUITitle", settings)
+        settings.title = CreateFrame("Frame", "TurtleTweaksGUITitle", settings)
         settings.title:SetPoint("TOP", settings, "TOP", 0, 12)
         settings.title:SetWidth(256)
         settings.title:SetHeight(64)
@@ -39,11 +39,11 @@ settings:SetScript("OnEvent", function()
 
         -- Create a font string for the title.
         settings.title.text = settings.title:CreateFontString(nil, "HIGH", "GameFontNormal")
-        settings.title.text:SetText("Vanilla Tweaks")
+        settings.title.text:SetText("Turtle Tweaks")
         settings.title.text:SetPoint("TOP", 0, -14)
 
         -- Creates a cancel button that is attached to our frame.
-        settings.cancel = CreateFrame("Button", "VanillaTweaksGUICancel", settings, "GameMenuButtonTemplate")
+        settings.cancel = CreateFrame("Button", "TurtleTweaksGUICancel", settings, "GameMenuButtonTemplate")
         settings.cancel:SetWidth(90)
         settings.cancel:SetPoint("BOTTOMRIGHT", settings, "BOTTOMRIGHT", -17, 17)
         settings.cancel:SetText(CANCEL)
@@ -60,7 +60,7 @@ settings:SetScript("OnEvent", function()
         end)
 
         -- Creates a okay button that is attached to our frame.
-        settings.okay = CreateFrame("Button", "VanillaTweaksGUIOkey", settings, "GameMenuButtonTemplate")
+        settings.okay = CreateFrame("Button", "TurtleTweaksGUIOkey", settings, "GameMenuButtonTemplate")
         settings.okay:SetWidth(90)
         settings.okay:SetPoint("RIGHT", settings.cancel, "LEFT", 0, 0)
         settings.okay:SetText(OKAY)
@@ -77,7 +77,7 @@ settings:SetScript("OnEvent", function()
         end)
 
         -- Creates a defaults button that is attached to our frame.
-        settings.defaults = CreateFrame("Button", "VanillaTweaksGUIDefaults", settings, "GameMenuButtonTemplate")
+        settings.defaults = CreateFrame("Button", "TurtleTweaksGUIDefaults", settings, "GameMenuButtonTemplate")
         settings.defaults:SetWidth(90)
         settings.defaults:SetPoint("BOTTOMLEFT", settings, "BOTTOMLEFT", 17, 17)
         settings.defaults:SetText(DEFAULTS)
@@ -94,10 +94,10 @@ settings:SetScript("OnEvent", function()
         end)
 
         -- Add a button to the game menu that opens our addon frame when clicked.
-        local mainMenuButton = CreateFrame("Button", "VanillaTweaksGUIMenuButton", GameMenuFrame,
+        local mainMenuButton = CreateFrame("Button", "TurtleTweaksGUIMenuButton", GameMenuFrame,
             "GameMenuButtonTemplate")
         mainMenuButton:SetPoint("TOP", GameMenuButtonUIOptions, "BOTTOM", 0, -1)
-        mainMenuButton:SetText("Vanilla Tweaks")
+        mainMenuButton:SetText("Turtle Tweaks")
         mainMenuButton:SetScript("OnClick", function()
             HideUIPanel(GameMenuFrame)
             settings:Show()
@@ -109,7 +109,7 @@ settings:SetScript("OnEvent", function()
         GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + 10)
 
         -- Create a container for our settings.
-        settings.container = CreateFrame("Frame", "VanillaTweaksGUIContainer", settings)
+        settings.container = CreateFrame("Frame", "TurtleTweaksGUIContainer", settings)
         settings.container:SetPoint("CENTER", settings, 0, 20)
         settings.container:SetHeight(maxHeight - 30)
         settings.container:SetWidth(maxWidth - 20)
@@ -121,6 +121,15 @@ settings:SetScript("OnEvent", function()
         RestedBarUI.form(settings.container, -90)
         LootAtMouseUI.form(settings.container, -130)
         CommandsUI.form(settings.container, -170)
-        CameraDistanceUI.form(settings.container, -270)
+        CameraDistanceUI.form(settings.container, -260)
+
+        SLASH_TurtleTweaks1 = "/vt"
+        SLASH_TurtleTweaks2 = "/TurtleTweaks"
+        SLASH_TurtleTweaks3 = "/tweaks"
+        SLASH_TurtleTweaks4 = "/vtweaks"
+
+        SlashCmdList["TurtleTweaks"] = function(msg, editbox)
+            settings:Show()
+        end
     end
 end)
