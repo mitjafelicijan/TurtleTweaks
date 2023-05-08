@@ -15,6 +15,13 @@ Please note that none of the options are enabled by default, and you will need
 to manually opt-in to each one. I designed it this way to align with the 
 vanilla experience and avoid forcing pre-selected preferences on users.
 
+## Installation
+
+1. Download the latest release from the Releases.
+2. Extract the contents of the archive into your `World of Warcraft\Interface\AddOns` folder.
+3. Rename the extracted folder to `TurtleTweaks` (remove the version number).
+4. Restart the game client.
+
 ## Features
 
 - Rested XP display in the Player unit frame.
