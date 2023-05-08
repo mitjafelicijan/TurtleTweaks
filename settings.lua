@@ -1,5 +1,5 @@
 local maxWidth = 500
-local maxHeight = 500
+local maxHeight = 280
 local alreadyLoaded = false
 
 local settings = CreateFrame("Frame", "TurtleTweaksGUI", UIParent)

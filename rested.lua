@@ -111,7 +111,7 @@ RestedBarUI.form = function(container, verticalOffset)
 
     local descriptionLabel = RestedBarUI["enabled"]:CreateFontString("Status", "LOW", "GameFontHighlightSmall")
     descriptionLabel:SetPoint("LEFT", RestedBarUI["enabled"], "RIGHT", 10, -7)
-    descriptionLabel:SetText("Displays the current rested percentage on the player unit frame.")
+    descriptionLabel:SetText("Displays the current rested percentage in a bar on the player unit frame.")
 end
 
 RestedBarUI.save = function()

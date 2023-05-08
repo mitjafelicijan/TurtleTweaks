@@ -144,7 +144,7 @@ CommandsUI.form = function(container, verticalOffset)
 
     local descriptionLabel = CommandsUI["enabled"]:CreateFontString("Status", "LOW", "GameFontHighlightSmall")
     descriptionLabel:SetPoint("LEFT", CommandsUI["enabled"], "RIGHT", 10, -7)
-    descriptionLabel:SetText("Enables commands: /addons, /rl, /align.")
+    descriptionLabel:SetText("Enables commands: /addons, /reload, /rl, /align.")
 end
 
 CommandsUI.save = function()
