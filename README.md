@@ -40,6 +40,7 @@ I haven't tested it with any other clients, but it may work with others.
 - Adds a bunch of slash commands for various things:
   - `/addons` - List all currently loaded addons
   - `/reloadui`, `/reload`, `/rl` - Reload the UI
+  - `/align` - Toggle the alignment grid
 
 ## Development Information
 
