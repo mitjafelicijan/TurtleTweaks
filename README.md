@@ -11,9 +11,9 @@ simplicity and lightness. I avoid including features that I don't personally
 use. As a result, I don't use many other addons either. My addon provides 
 only a few quality of life improvements.
 
-**None** of the options are enabled by default. You have to **opt-in** to each 
-one. This kind of chims with the vanilla experience and I don't want to force
-pre-selected preferences on anyone.
+Please note that none of the options are enabled by default, and you will need 
+to manually opt-in to each one. I designed it this way to align with the 
+vanilla experience and avoid forcing pre-selected preferences on users.
 
 ## Features
 
