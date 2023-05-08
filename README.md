@@ -41,6 +41,13 @@ I haven't tested it with any other clients, but it may work with others.
   - `/addons` - List all currently loaded addons
   - `/reloadui`, `/reload`, `/rl` - Reload the UI
 
+## Development Information
+
+- [World of Warcraft API Documentation](https://wow.gamepedia.com/World_of_Warcraft_API)
+- [World of Warcraft Widget API Documentation](https://wowpedia.fandom.com/wiki/Widget_API)
+- [WoW Vanilla Addons Website](https://legacy-wow.com/vanilla-addons/)
+- [Comprehensive Beginner's Guide for WoW Addon Coding in Lua](https://www.wowhead.com/guide/comprehensive-beginners-guide-for-wow-addon-coding-in-lua-5338)
+
 ## Special Thanks
 
 - [Shagu](https://shagu.org/) for creating [ShaguTweaks](https://shagu.org/ShaguTweaks/), which has been a source of inspiration for me.
@@ -48,10 +55,11 @@ I haven't tested it with any other clients, but it may work with others.
 - [Blizzard Entertainment](https://www.blizzard.com/) for creating World of Warcraft.
 - [The WoW AddOn Community](https://www.curseforge.com/wow/addons) for creating and maintaining addons.
 
-## Additional inspiration
+## Additional Inspiration
 
 - https://github.com/anzz1/FreeBagSlots
 - https://github.com/hazlema/Rested
+- https://github.com/Steelbash/RestBar
 
 ## Contributing
 
