@@ -5,6 +5,7 @@
 -- * /align: adds a grid to the screen.
 
 local frame = CreateFrame("FRAME")
+
 frame:SetAllPoints(UIParent)
 
 frame:RegisterEvent("ADDON_LOADED")
@@ -13,13 +14,14 @@ frame:SetScript("OnEvent", function()
     -- Fallback to default behavior if the user has disabled this feature.
     if event == "ADDON_LOADED" then
         if Commands == nil then
-            Commands = {}
-            Commands["enabled"] = false
-            Commands["config"] = {}
+            Commands = {
+                enabled = false,
+                config = {}
+            }
         end
 
         -- Registers the slash commands.
-        if Commands and Commands["enabled"] then
+        if Commands and Commands.enabled then
             frame.reloadUI()
             frame.listAddons()
             frame.alignGrid()
@@ -136,31 +138,28 @@ end
 
 
 -- Holds all the UI elements for settings.
-CommandsUI = {}
-CommandsUI["enabled"] = nil
+CommandsUI = {
+    enabled = nil,
+    form = function(container, verticalOffset)
+        CommandsUI.enabled = CreateFrame("CheckButton", nil, container, "UICheckButtonTemplate")
+        CommandsUI.enabled:SetPoint("TOPLEFT", 20, verticalOffset)
+        CommandsUI.enabled:SetChecked(Commands.enabled)
 
-CommandsUI.form = function(container, verticalOffset)
-    CommandsUI["enabled"] = CreateFrame("CheckButton", "Checkbox", container, "UICheckButtonTemplate")
-    CommandsUI["enabled"]:SetPoint("TOPLEFT", 20, verticalOffset)
-    CommandsUI["enabled"]:SetChecked(Commands["enabled"])
+        local titleLabel = CommandsUI.enabled:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+        titleLabel:SetPoint("LEFT", CommandsUI.enabled, "RIGHT", 10, 7)
+        titleLabel:SetText("Helper commands")
 
-    local titleLabel = CommandsUI["enabled"]:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    titleLabel:SetPoint("LEFT", CommandsUI["enabled"], "RIGHT", 10, 7)
-    titleLabel:SetText("Helper commands")
-
-    local descriptionLabel = CommandsUI["enabled"]:CreateFontString("Status", "LOW", "GameFontHighlightSmall")
-    descriptionLabel:SetPoint("LEFT", CommandsUI["enabled"], "RIGHT", 10, -7)
-    descriptionLabel:SetText("Enables commands: /addons, /reload, /rl, /align.")
-end
-
-CommandsUI.save = function()
-    Commands["enabled"] = (CommandsUI["enabled"]:GetChecked() and true or false)
-end
-
-CommandsUI.cancel = function()
-    CommandsUI["enabled"]:SetChecked(Commands["enabled"])
-end
-
-CommandsUI.reset = function()
-    Commands = nil
-end
+        local descriptionLabel = CommandsUI.enabled:CreateFontString("Status", "LOW", "GameFontHighlightSmall")
+        descriptionLabel:SetPoint("LEFT", CommandsUI.enabled, "RIGHT", 10, -7)
+        descriptionLabel:SetText("Enables helper commands: /addons, /reload, /rl, /align.")
+    end,
+    save = function()
+        Commands.enabled = (CommandsUI.enabled:GetChecked() and true or false)
+    end,
+    cancel = function()
+        CommandsUI.enabled:SetChecked(Commands.enabled)
+    end,
+    reset = function()
+        Commands = nil
+    end
+}

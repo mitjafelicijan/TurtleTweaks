@@ -2,17 +2,17 @@
 
 **World of Warcraft Tweaks and Enhancements addon.**
 
-**Consideration:** Please note that this addon is not designed to compete with 
-any other addon. It is simply a compilation of tweaks and enhancements that I 
-have found to be useful. If you require additional functionality, I suggest 
-checking out [ShaguTweaks](https://shagu.org/ShaguTweaks/), an outstanding addon 
-that has been a source of inspiration for me. My approach is to prioritize 
-simplicity and lightness. I avoid including features that I don't personally 
-use. As a result, I don't use many other addons either. My addon provides 
+**Consideration:** Please note that this addon is not designed to compete with
+any other addon. It is simply a compilation of tweaks and enhancements that I
+have found to be useful. If you require additional functionality, I suggest
+checking out [ShaguTweaks](https://shagu.org/ShaguTweaks/), an outstanding addon
+that has been a source of inspiration for me. My approach is to prioritize
+simplicity and lightness. I avoid including features that I don't personally
+use. As a result, I don't use many other addons either. My addon provides
 only a few quality of life improvements.
 
-Please note that none of the options are enabled by default, and you will need 
-to manually opt-in to each one. I designed it this way to align with the 
+Please note that none of the options are enabled by default, and you will need
+to manually opt-in to each one. I designed it this way to align with the
 vanilla experience and avoid forcing pre-selected preferences on users.
 
 ## Compatibility
@@ -45,6 +45,7 @@ I haven't tested it with any other clients, but it may work with others.
   - `/align` - Toggle the alignment grid
 - Maximum Camera Distance slider to the options.
 - Default nameplate scaling slider to the options that can fix large nameplates.
+- Enables World Map to be opened in a window and scaled.
 
 ## Development Information
 

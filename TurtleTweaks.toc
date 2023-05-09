@@ -2,7 +2,7 @@
 ## Title: TurtleTweaks
 ## Author: Mitja Felicijan (m@mitjafelicijan.com)
 ## Notes: A bunch of tweaks for Vanilla WoW.
-## Version: 0.4
+## Version: 0.5
 
 ## SavedVariablesPerCharacter: Debug
 ## SavedVariablesPerCharacter: Sandbox
@@ -11,6 +11,7 @@
 ## SavedVariablesPerCharacter: BagSlots
 ## SavedVariablesPerCharacter: RestedBar
 ## SavedVariablesPerCharacter: Nameplates
+## SavedVariablesPerCharacter: WorldmapWindow
 
 # Debugging
 debug.lua
@@ -24,10 +25,10 @@ loot-at-mouse.lua
 bag-slots.lua
 camera-distance.lua
 nameplates.lua
+worldmap-window.lua
 
 # Work in progress
-# wip/open-all-mail.lua
-# wip/worldmap-window.lua
+# open-all-mail.lua
 
 # Sandbox stuff
 sandbox.lua
