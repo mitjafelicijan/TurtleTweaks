@@ -13,7 +13,7 @@ settings:SetScript("OnEvent", function()
     if event == "ADDON_LOADED" and not alreadyLoaded then
         alreadyLoaded = true
         settings:EnableMouse(true)
-        -- settings:Hide()
+        settings:Hide()
 
         -- Create a frame for our addon and position it in the center of the screen.
         settings:SetPoint("CENTER", UIParent, "CENTER", 0, 100)
