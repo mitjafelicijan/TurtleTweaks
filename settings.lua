@@ -5,7 +5,8 @@ local maxWidth = 570
 local maxHeight = 440
 local alreadyLoaded = false
 
-local settings = CreateFrame("Frame", nil, UIParent)
+-- No local here since this is used in other files.
+settings = CreateFrame("Frame", nil, UIParent)
 
 settings:RegisterEvent("ADDON_LOADED")
 
