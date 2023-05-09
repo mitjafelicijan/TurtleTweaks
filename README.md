@@ -34,6 +34,10 @@ I haven't tested it with any other clients, but it may work with others.
 3. Rename the extracted folder to `TurtleTweaks` (remove the version number).
 4. Restart the game client.
 
+## Screenshots
+
+![Settings panel](https://github.com/mitjafelicijan/TurtleTweaks/assets/296714/45bcaab2-246c-4f49-9bcc-c5c6c761028b)
+
 ## Features
 
 - Rested XP display in the Player unit frame.
