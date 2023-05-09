@@ -1,11 +1,11 @@
 -- Last Modified: 2023-05-09
 -- Contents: Adds settings panel and attaches a button to the main menu.
 
-local maxWidth = 510
-local maxHeight = 360
+local maxWidth = 570
+local maxHeight = 440
 local alreadyLoaded = false
 
-local settings = CreateFrame("Frame", "TurtleTweaksGUI", UIParent)
+local settings = CreateFrame("Frame", nil, UIParent)
 
 settings:RegisterEvent("ADDON_LOADED")
 
@@ -19,6 +19,7 @@ settings:SetScript("OnEvent", function()
         settings:SetPoint("CENTER", UIParent, "CENTER", 0, 100)
         settings:SetWidth(maxWidth)
         settings:SetHeight(maxHeight)
+
         -- Create a backdrop for our addon.
         settings:SetBackdrop({
             bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background",
@@ -30,7 +31,7 @@ settings:SetScript("OnEvent", function()
         })
 
         -- Add a title to the frame.
-        settings.title = CreateFrame("Frame", "TurtleTweaksGUITitle", settings)
+        settings.title = CreateFrame("Frame", nil, settings)
         settings.title:SetPoint("TOP", settings, "TOP", 0, 12)
         settings.title:SetWidth(256)
         settings.title:SetHeight(64)
@@ -46,7 +47,7 @@ settings:SetScript("OnEvent", function()
         settings.title.text:SetPoint("TOP", 0, -14)
 
         -- Creates a cancel button that is attached to our frame.
-        settings.cancel = CreateFrame("Button", "TurtleTweaksGUICancel", settings, "GameMenuButtonTemplate")
+        settings.cancel = CreateFrame("Button", nil, settings, "GameMenuButtonTemplate")
         settings.cancel:SetWidth(90)
         settings.cancel:SetPoint("BOTTOMRIGHT", settings, "BOTTOMRIGHT", -17, 17)
         settings.cancel:SetText(CANCEL)
@@ -58,13 +59,14 @@ settings:SetScript("OnEvent", function()
             CommandsUI.cancel()
             CameraDistanceUI.cancel()
             NameplatesUI.cancel()
+            WorldmapWindowUI.cancel()
 
             -- Hide the settings frame.
             settings:Hide()
         end)
 
         -- Creates a okay button that is attached to our frame.
-        settings.okay = CreateFrame("Button", "TurtleTweaksGUIOkey", settings, "GameMenuButtonTemplate")
+        settings.okay = CreateFrame("Button", nil, settings, "GameMenuButtonTemplate")
         settings.okay:SetWidth(90)
         settings.okay:SetPoint("RIGHT", settings.cancel, "LEFT", 0, 0)
         settings.okay:SetText(OKAY)
@@ -76,13 +78,14 @@ settings:SetScript("OnEvent", function()
             CommandsUI.save()
             CameraDistanceUI.save()
             NameplatesUI.save()
+            WorldmapWindowUI.save()
 
             -- Reload the UI to apply the changes.
             ConsoleExec("reloadui")
         end)
 
         -- Creates a defaults button that is attached to our frame.
-        settings.defaults = CreateFrame("Button", "TurtleTweaksGUIDefaults", settings, "GameMenuButtonTemplate")
+        settings.defaults = CreateFrame("Button", nil, settings, "GameMenuButtonTemplate")
         settings.defaults:SetWidth(90)
         settings.defaults:SetPoint("BOTTOMLEFT", settings, "BOTTOMLEFT", 17, 17)
         settings.defaults:SetText(DEFAULTS)
@@ -94,14 +97,14 @@ settings:SetScript("OnEvent", function()
             CommandsUI.reset()
             CameraDistanceUI.reset()
             NameplatesUI.reset()
+            WorldmapWindowUI.reset()
 
             -- Reload the UI to apply the changes.
             ConsoleExec("reloadui")
         end)
 
         -- Add a button to the game menu that opens our addon frame when clicked.
-        local mainMenuButton = CreateFrame("Button", "TurtleTweaksGUIMenuButton", GameMenuFrame,
-            "GameMenuButtonTemplate")
+        local mainMenuButton = CreateFrame("Button", nil, GameMenuFrame, "GameMenuButtonTemplate")
         mainMenuButton:SetPoint("TOP", GameMenuButtonUIOptions, "BOTTOM", 0, -1)
         mainMenuButton:SetText("Turtle Tweaks")
         mainMenuButton:SetScript("OnClick", function()
@@ -115,7 +118,7 @@ settings:SetScript("OnEvent", function()
         GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + 10)
 
         -- Create a container for our settings.
-        settings.container = CreateFrame("Frame", "TurtleTweaksGUIContainer", settings)
+        settings.container = CreateFrame("Frame", nil, settings)
         settings.container:SetPoint("CENTER", settings, 0, 20)
         settings.container:SetHeight(maxHeight - 30)
         settings.container:SetWidth(maxWidth - 20)
@@ -127,8 +130,9 @@ settings:SetScript("OnEvent", function()
         RestedBarUI.form(settings.container, -90)
         LootAtMouseUI.form(settings.container, -130)
         CommandsUI.form(settings.container, -170)
-        CameraDistanceUI.form(settings.container, -260)
-        NameplatesUI.form(settings.container, -260, 260)
+        WorldmapWindowUI.form(settings.container, -255, 20)
+        NameplatesUI.form(settings.container, -255, 280)
+        CameraDistanceUI.form(settings.container, -330)
 
         SLASH_TurtleTweaks1 = "/vt"
         SLASH_TurtleTweaks2 = "/TurtleTweaks"
@@ -138,5 +142,7 @@ settings:SetScript("OnEvent", function()
         SlashCmdList["TurtleTweaks"] = function(msg, editbox)
             settings:Show()
         end
+
+        settings:Show()
     end
 end)
