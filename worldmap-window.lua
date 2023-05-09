@@ -31,7 +31,6 @@ frame:SetScript("OnEvent", function()
 
         -- Triggered when the world map is opened.
         WorldMapFrame:SetScript("onShow", function()
-            DEFAULT_CHAT_FRAME:AddMessage(">>>" .. WorldmapWindow.config.scale)
             WorldMapFrame:EnableKeyboard(false)
             WorldMapFrame:EnableMouseWheel(true)
             WorldMapFrame:SetScale(WorldmapWindow.config.scale)
