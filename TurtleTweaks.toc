@@ -2,7 +2,7 @@
 ## Title: TurtleTweaks
 ## Author: Mitja Felicijan (m@mitjafelicijan.com)
 ## Notes: A bunch of tweaks for Vanilla WoW.
-## Version: 0.3
+## Version: 0.4
 
 ## SavedVariablesPerCharacter: Debug
 ## SavedVariablesPerCharacter: Sandbox
