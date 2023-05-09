@@ -142,7 +142,5 @@ settings:SetScript("OnEvent", function()
         SlashCmdList["TurtleTweaks"] = function(msg, editbox)
             settings:Show()
         end
-
-        settings:Show()
     end
 end)
