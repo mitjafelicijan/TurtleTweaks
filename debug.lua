@@ -56,6 +56,15 @@ frame:SetScript("OnEvent", function()
                         ShowFriendNameplates()
                     end
                 end)
+
+                local settingsButton = CreateFrame("Button", nil, UIParent, "UIPanelButtonTemplate")
+                settingsButton:SetWidth(110)
+                settingsButton:SetHeight(25)
+                settingsButton:SetPoint("BOTTOMRIGHT", -30, 100)
+                settingsButton:SetText("Settings")
+                settingsButton:SetScript("OnClick", function(self, event, ...)
+                    settings:Show()
+                end)
             end
         end
 
