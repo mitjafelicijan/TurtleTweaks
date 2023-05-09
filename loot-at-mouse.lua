@@ -1,6 +1,5 @@
--- Opens the loot window at the current cursor position.
--- Author: Mitja Felicijan (m@mitjafelicijan.com)
-
+-- Last Modified: 2023-05-09
+-- Contents: Opens the loot window at the current cursor position.
 -- FIXME: Close target frame when opening loot window.
 
 local frame = CreateFrame("FRAME")
@@ -58,5 +57,5 @@ LootAtMouseUI.cancel = function()
 end
 
 LootAtMouseUI.reset = function()
-    LootAtMouse["enabled"] = false
+    LootAtMouse = nil
 end

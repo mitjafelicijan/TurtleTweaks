@@ -1,4 +1,7 @@
-local maxWidth = 500
+-- Last Modified: 2023-05-09
+-- Contents: Adds settings panel and attaches a button to the main menu.
+
+local maxWidth = 510
 local maxHeight = 360
 local alreadyLoaded = false
 
@@ -10,10 +13,10 @@ settings:SetScript("OnEvent", function()
     if event == "ADDON_LOADED" and not alreadyLoaded then
         alreadyLoaded = true
         settings:EnableMouse(true)
-        settings:Hide()
+        -- settings:Hide()
 
         -- Create a frame for our addon and position it in the center of the screen.
-        settings:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+        settings:SetPoint("CENTER", UIParent, "CENTER", 0, 100)
         settings:SetWidth(maxWidth)
         settings:SetHeight(maxHeight)
         -- Create a backdrop for our addon.
@@ -54,6 +57,7 @@ settings:SetScript("OnEvent", function()
             LootAtMouseUI.cancel()
             CommandsUI.cancel()
             CameraDistanceUI.cancel()
+            NameplatesUI.cancel()
 
             -- Hide the settings frame.
             settings:Hide()
@@ -71,6 +75,7 @@ settings:SetScript("OnEvent", function()
             LootAtMouseUI.save()
             CommandsUI.save()
             CameraDistanceUI.save()
+            NameplatesUI.save()
 
             -- Reload the UI to apply the changes.
             ConsoleExec("reloadui")
@@ -88,6 +93,7 @@ settings:SetScript("OnEvent", function()
             LootAtMouseUI.reset()
             CommandsUI.reset()
             CameraDistanceUI.reset()
+            NameplatesUI.reset()
 
             -- Reload the UI to apply the changes.
             ConsoleExec("reloadui")
@@ -122,6 +128,7 @@ settings:SetScript("OnEvent", function()
         LootAtMouseUI.form(settings.container, -130)
         CommandsUI.form(settings.container, -170)
         CameraDistanceUI.form(settings.container, -260)
+        NameplatesUI.form(settings.container, -260, 260)
 
         SLASH_TurtleTweaks1 = "/vt"
         SLASH_TurtleTweaks2 = "/TurtleTweaks"

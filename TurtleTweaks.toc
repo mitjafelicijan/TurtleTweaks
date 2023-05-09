@@ -4,11 +4,16 @@
 ## Notes: A bunch of tweaks for Vanilla WoW.
 ## Version: 0.3
 
+## SavedVariablesPerCharacter: Debug
+## SavedVariablesPerCharacter: Sandbox
 ## SavedVariablesPerCharacter: Commands
 ## SavedVariablesPerCharacter: LootAtMouse
 ## SavedVariablesPerCharacter: BagSlots
 ## SavedVariablesPerCharacter: RestedBar
-## SavedVariablesPerCharacter: OpenMail
+## SavedVariablesPerCharacter: Nameplates
+
+# Debugging
+debug.lua
 
 # Commands
 commands.lua
@@ -18,13 +23,14 @@ rested-bar.lua
 loot-at-mouse.lua
 bag-slots.lua
 camera-distance.lua
+nameplates.lua
 
 # Work in progress
-# open-all-mail.lua
-# worldmap-window.lua
+# wip/open-all-mail.lua
+# wip/worldmap-window.lua
 
-# Experimental
-experimental.lua
+# Sandbox stuff
+sandbox.lua
 
 # UI stuff
 settings.lua

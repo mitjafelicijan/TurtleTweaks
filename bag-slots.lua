@@ -1,6 +1,5 @@
--- Adds a number of free bag slots to the backpack button.
--- Author: Mitja Felicijan (m@mitjafelicijan.com)
--- Inspired by https://github.com/anzz1/FreeBagSlots
+-- Last Modified: 2023-05-08
+-- Contents: Adds a number of free bag slots to the backpack button.
 
 local frame = CreateFrame("FRAME")
 
@@ -79,5 +78,5 @@ BagSlotsUI.cancel = function()
 end
 
 BagSlotsUI.reset = function()
-    BagSlots["enabled"] = false
+    BagSlots = nil
 end

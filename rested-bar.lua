@@ -1,6 +1,5 @@
--- Adds rested bar to player frame.
--- Author: Mitja Felicijan (m@mitjafelicijan.com)
--- Inspired by https://github.com/Steelbash/RestBar
+-- Last Modified: 2023-05-09
+-- Contents: Adds rested bar to player frame.
 
 local frame = CreateFrame("FRAME")
 
@@ -123,5 +122,5 @@ RestedBarUI.cancel = function()
 end
 
 RestedBarUI.reset = function()
-    RestedBar["enabled"] = false
+    RestedBar = nil
 end

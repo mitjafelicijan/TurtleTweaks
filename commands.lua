@@ -1,8 +1,8 @@
--- Adds the following commands that lists:
+-- Last Modified: 2023-05-09
+-- Contents: Adds the following commands that lists:
 -- * /addons: all loaded addons.
 -- * /reloadui, /reload, and /rl: reloads the UI.
 -- * /align: adds a grid to the screen.
--- Author: Mitja Felicijan (m@mitjafelicijan.com)
 
 local frame = CreateFrame("FRAME")
 frame:SetAllPoints(UIParent)
@@ -162,5 +162,5 @@ CommandsUI.cancel = function()
 end
 
 CommandsUI.reset = function()
-    Commands["enabled"] = false
+    Commands = nil
 end

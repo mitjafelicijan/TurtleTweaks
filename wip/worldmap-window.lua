@@ -1,5 +1,5 @@
--- Change the default world map to a smaller, movable one.
--- Author: Mitja Felicijan (m@mitjafelicijan.com)
+-- Last Modified: 2023-05-09
+-- Contents: Change the default world map to a smaller, movable one.
 
 local frame = CreateFrame("Frame")
 

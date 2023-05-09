@@ -1,6 +1,5 @@
--- Adds a button to the mail window that allows the user to open all mail at once.
--- Author: Mitja Felicijan (m@mitjafelicijan.com)
--- Inspired by: https://github.com/shirsig/Mail
+-- Last Modified: 2023-05-09
+-- Contents: Adds a button to the mail window that allows the user to open all mail at once.
 
 local frame = CreateFrame("FRAME")
 
