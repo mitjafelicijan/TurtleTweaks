@@ -43,7 +43,8 @@ I haven't tested it with any other clients, but it may work with others.
   - `/addons` - List all currently loaded addons
   - `/reloadui`, `/reload`, `/rl` - Reload the UI
   - `/align` - Toggle the alignment grid
-- Added Maximum Camera Distance slider to the Interface Options.
+- Maximum Camera Distance slider to the options.
+- Default nameplate scaling slider to the options that can fix large nameplates.
 
 ## Development Information
 
