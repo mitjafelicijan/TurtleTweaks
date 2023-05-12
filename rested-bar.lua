@@ -41,6 +41,7 @@ frame:SetScript("OnEvent", function()
             currentRestValue = frame.getRestedPercentage()
 
             statusBar = CreateFrame("StatusBar", nil, PlayerFrame, "TextStatusBar")
+            statusBar:ClearAllPoints()
             statusBar:SetWidth(100)
             statusBar:SetHeight(12)
             statusBar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
@@ -60,13 +61,6 @@ frame:SetScript("OnEvent", function()
             statusBar.text = statusBar:CreateFontString(nil, "OVERLAY")
             statusBar.text:SetPoint("CENTER", 0, 0)
             statusBar.text:SetFont(STANDARD_TEXT_FONT, 8, "OUTLINE")
-
-            statusBar.tick = statusBar:CreateFontString(nil, "OVERLAY")
-            statusBar.tick:SetPoint("LEFT", 110, 0)
-            statusBar.tick:SetFont(STANDARD_TEXT_FONT, 12, "OUTLINE")
-            statusBar.tick:SetTextColor(205, 0, 205, 1)
-
-            statusBar:ClearAllPoints()
 
             if RestedBar.config.position == "top" then
                 statusBar:SetPoint("TOPLEFT", 114, -10)
@@ -95,6 +89,12 @@ frame:SetScript("OnUpdate", function()
             lastRestValue = currentRestValue
             statusBar.text:SetText(lastRestValue .. "%")
             statusBar:SetValue(lastRestValue)
+
+            if lastRestValue < 33 then
+                statusBar:SetStatusBarColor(255, 255, 255)
+            else
+                statusBar:SetStatusBarColor(0, 255, 255)
+            end
         end
     end
 end)
