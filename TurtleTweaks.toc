@@ -27,9 +27,6 @@ camera-distance.lua
 nameplates.lua
 worldmap-window.lua
 
-# Work in progress
-# open-all-mail.lua
-
 # Sandbox stuff
 sandbox.lua
 
