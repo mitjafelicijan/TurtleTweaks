@@ -45,6 +45,7 @@ frame:SetScript("OnEvent", function()
             statusBar:SetHeight(12)
             statusBar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
             statusBar:SetStatusBarColor(0, 255, 255)
+            statusBar:SetMinMaxValues(0, 100)
 
             statusBar.bg = statusBar:CreateTexture(nil, "BACKGROUND")
             statusBar.bg:SetAllPoints(statusBar)
@@ -93,6 +94,7 @@ frame:SetScript("OnUpdate", function()
         if lastRestValue ~= currentRestValue then
             lastRestValue = currentRestValue
             statusBar.text:SetText(lastRestValue .. "%")
+            statusBar:SetValue(lastRestValue)
         end
     end
 end)
