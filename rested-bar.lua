@@ -85,16 +85,13 @@ end)
 -- Updates the UI rested bar.
 frame:SetScript("OnUpdate", function()
     if RestedBar and RestedBar.enabled then
-        if lastRestValue ~= currentRestValue then
-            lastRestValue = currentRestValue
-            statusBar.text:SetText(lastRestValue .. "%")
-            statusBar:SetValue(lastRestValue)
+        statusBar.text:SetText(currentRestValue .. "%")
+        statusBar:SetValue(currentRestValue)
 
-            if lastRestValue < 33 then
-                statusBar:SetStatusBarColor(255, 255, 255)
-            else
-                statusBar:SetStatusBarColor(0, 255, 255)
-            end
+        if currentRestValue < 33 then
+            statusBar:SetStatusBarColor(255, 255, 255)
+        else
+            statusBar:SetStatusBarColor(0, 255, 255)
         end
     end
 end)
