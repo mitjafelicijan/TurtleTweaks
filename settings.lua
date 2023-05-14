@@ -2,7 +2,7 @@
 -- Contents: Adds settings panel and attaches a button to the main menu.
 
 local maxWidth = 570
-local maxHeight = 440
+local maxHeight = 470
 local alreadyLoaded = false
 
 -- No local here since this is used in other files.
@@ -17,7 +17,7 @@ settings:SetScript("OnEvent", function()
         settings:Hide()
 
         -- Create a frame for our addon and position it in the center of the screen.
-        settings:SetPoint("CENTER", UIParent, "CENTER", 0, 100)
+        settings:SetPoint("CENTER", UIParent, "CENTER", 0, 50)
         settings:SetWidth(maxWidth)
         settings:SetHeight(maxHeight)
 
@@ -58,6 +58,7 @@ settings:SetScript("OnEvent", function()
             RestedBarUI.cancel()
             LootAtMouseUI.cancel()
             CommandsUI.cancel()
+            CooldownTimersUI.cancel()
             CameraDistanceUI.cancel()
             NameplatesUI.cancel()
             WorldmapWindowUI.cancel()
@@ -77,6 +78,7 @@ settings:SetScript("OnEvent", function()
             RestedBarUI.save()
             LootAtMouseUI.save()
             CommandsUI.save()
+            CooldownTimersUI.save()
             CameraDistanceUI.save()
             NameplatesUI.save()
             WorldmapWindowUI.save()
@@ -96,6 +98,7 @@ settings:SetScript("OnEvent", function()
             RestedBarUI.reset()
             LootAtMouseUI.reset()
             CommandsUI.reset()
+            CooldownTimersUI.reset()
             CameraDistanceUI.reset()
             NameplatesUI.reset()
             WorldmapWindowUI.reset()
@@ -131,9 +134,11 @@ settings:SetScript("OnEvent", function()
         RestedBarUI.form(settings.container, -90)
         LootAtMouseUI.form(settings.container, -130)
         CommandsUI.form(settings.container, -170)
-        WorldmapWindowUI.form(settings.container, -255, 20)
-        NameplatesUI.form(settings.container, -255, 280)
-        CameraDistanceUI.form(settings.container, -330)
+        CooldownTimersUI.form(settings.container, -210)
+
+        WorldmapWindowUI.form(settings.container, -295, 20)
+        NameplatesUI.form(settings.container, -295, 280)
+        CameraDistanceUI.form(settings.container, -370)
 
         SLASH_TurtleTweaks1 = "/vt"
         SLASH_TurtleTweaks2 = "/TurtleTweaks"

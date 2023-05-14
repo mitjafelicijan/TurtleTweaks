@@ -12,20 +12,22 @@
 ## SavedVariablesPerCharacter: RestedBar
 ## SavedVariablesPerCharacter: Nameplates
 ## SavedVariablesPerCharacter: WorldmapWindow
+## SavedVariablesPerCharacter: CooldownTimers
 
 # Debugging
 debug.lua
 
 # Commands
-commands.lua
+tweaks\commands.lua
 
 # Tweaks
-rested-bar.lua
-loot-at-mouse.lua
-bag-slots.lua
-camera-distance.lua
-nameplates.lua
-worldmap-window.lua
+tweaks\rested-bar.lua
+tweaks\loot-at-mouse.lua
+tweaks\bag-slots.lua
+tweaks\camera-distance.lua
+tweaks\nameplates.lua
+tweaks\worldmap-window.lua
+tweaks\cooldown-timers.lua
 
 # Sandbox stuff
 sandbox.lua
