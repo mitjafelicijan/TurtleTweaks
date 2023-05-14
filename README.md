@@ -36,7 +36,7 @@ I haven't tested it with any other clients, but it may work with others.
 
 ## Screenshots
 
-![Settings panel](https://github.com/mitjafelicijan/TurtleTweaks/assets/296714/45bcaab2-246c-4f49-9bcc-c5c6c761028b)
+![Settings panel](https://github.com/mitjafelicijan/TurtleTweaks/assets/296714/910bfad2-9c78-4b35-bc48-e58f7cafa840)
 
 ## Features
 
@@ -50,6 +50,7 @@ I haven't tested it with any other clients, but it may work with others.
 - Maximum Camera Distance slider to the options.
 - Default nameplate scaling slider to the options that can fix large nameplates.
 - Enables World Map to be opened in a window and scaled.
+- Adds cooldown timers to the actionbar buttons.
 
 ## Development Information
 

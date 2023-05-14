@@ -25,12 +25,19 @@ frame:SetScript("OnEvent", function()
         UIPanelWindows.WorldMapFrame = { area = "CENTER" }
         UIPanelWindows.WorldMapFrame.allowOtherPanels = true
 
+        -- Enables the world map to be moved.
+        -- FIXME: This is not working.
+        WorldMapFrame:SetMovable(true)
+        WorldMapFrame:RegisterForDrag("LeftButton")
+        WorldMapFrame:SetScript("OnDragStart", function() WorldMapFrame:StartMoving() end)
+        WorldMapFrame:SetScript("OnDragStop", function() WorldMapFrame:StopMovingOrSizing() end)
 
         -- Hide the black background.
         BlackoutWorld:Hide();
 
         -- Triggered when the world map is opened.
         WorldMapFrame:SetScript("onShow", function()
+            WorldMapFrame:EnableMouse(true)
             WorldMapFrame:EnableKeyboard(false)
             WorldMapFrame:EnableMouseWheel(true)
             WorldMapFrame:SetScale(WorldmapWindow.config.scale)
