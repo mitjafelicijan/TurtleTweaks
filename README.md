@@ -58,6 +58,7 @@ I haven't tested it with any other clients, but it may work with others.
 - [World of Warcraft Widget API Documentation](https://wowpedia.fandom.com/wiki/Widget_API)
 - [WoW Vanilla Addons Website](https://legacy-wow.com/vanilla-addons/)
 - [Comprehensive Beginner's Guide for WoW Addon Coding in Lua](https://www.wowhead.com/guide/comprehensive-beginners-guide-for-wow-addon-coding-in-lua-5338)
+- [WoW 1.12 Interface Explorer](https://wow-tools.vercel.app)
 
 ## Special Thanks
 
