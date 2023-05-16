@@ -43,7 +43,7 @@ frame:SetScript("OnEvent", function()
             WorldMapFrame:SetScale(WorldmapWindow.config.scale)
 
             WorldMapFrame:ClearAllPoints()
-            WorldMapFrame:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+            WorldMapFrame:SetPoint("LEFT", UIParent, "LEFT", 10, 0)
             WorldMapFrame:SetWidth(WorldMapButton:GetWidth())
             WorldMapFrame:SetHeight(WorldMapButton:GetHeight())
         end)
