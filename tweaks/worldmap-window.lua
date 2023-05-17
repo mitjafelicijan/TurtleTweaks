@@ -1,11 +1,12 @@
 -- Last Modified: 2023-05-09
 -- Contents: Change the default world map to a smaller and in a window.
-
+-- FIXME: If map is opened and you loot UIParent.lua:735 attempt to compare number nil.
 local moduleRegistered = false
 local frame = CreateFrame("Frame")
 
 frame:RegisterEvent("ADDON_LOADED")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 
 frame:SetScript("OnEvent", function()
     -- Fallback to default behavior if the user has disabled this feature.
@@ -14,23 +15,31 @@ frame:SetScript("OnEvent", function()
             WorldmapWindow = {
                 enabled = false,
                 config = {
-                    scale = 1,
-                },
+                    scale = 1
+                }
             }
         end
     end
 
     if WorldmapWindow and WorldmapWindow["enabled"] and event == "PLAYER_ENTERING_WORLD" then
         -- Allows other panels to be opened while the world map is open.
-        UIPanelWindows.WorldMapFrame = { area = "CENTER" }
+        UIPanelWindows.WorldMapFrame = {
+            area = "CENTER"
+        }
         UIPanelWindows.WorldMapFrame.allowOtherPanels = true
 
         -- Enables the world map to be moved.
         -- FIXME: This is not working.
         WorldMapFrame:SetMovable(true)
         WorldMapFrame:RegisterForDrag("LeftButton")
-        WorldMapFrame:SetScript("OnDragStart", function() WorldMapFrame:StartMoving() end)
-        WorldMapFrame:SetScript("OnDragStop", function() WorldMapFrame:StopMovingOrSizing() end)
+
+        WorldMapFrame:SetScript("OnDragStart", function()
+            WorldMapFrame:StartMoving()
+        end)
+
+        WorldMapFrame:SetScript("OnDragStop", function()
+            WorldMapFrame:StopMovingOrSizing()
+        end)
 
         -- Hide the black background.
         BlackoutWorld:Hide();
@@ -43,10 +52,24 @@ frame:SetScript("OnEvent", function()
             WorldMapFrame:SetScale(WorldmapWindow.config.scale)
 
             WorldMapFrame:ClearAllPoints()
-            WorldMapFrame:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+            WorldMapFrame:SetPoint("TOPLEFT", UIParent, "TOPLEFT", 20, -200)
             WorldMapFrame:SetWidth(WorldMapButton:GetWidth())
             WorldMapFrame:SetHeight(WorldMapButton:GetHeight())
+
+            -- Fixes the world map not showing the current zone if
+            -- map is already opened.
+            SetMapToCurrentZone();
+            DEFAULT_CHAT_FRAME:AddMessage("ZONE_CHANGED_NEW_AREA")
+            DEFAULT_CHAT_FRAME:AddMessage("**********************************************")
+
         end)
+    end
+
+    -- Fixes the world map not showing the current zone.
+    if WorldmapWindow and WorldmapWindow["enabled"] and event == "ZONE_CHANGED_NEW_AREA" then
+        SetMapToCurrentZone();
+        DEFAULT_CHAT_FRAME:AddMessage("ZONE_CHANGED_NEW_AREA")
+        DEFAULT_CHAT_FRAME:AddMessage("**********************************************")
     end
 end)
 

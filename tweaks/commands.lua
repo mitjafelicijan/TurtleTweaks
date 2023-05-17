@@ -3,7 +3,6 @@
 -- * /addons: all loaded addons.
 -- * /reloadui, /reload, and /rl: reloads the UI.
 -- * /align: adds a grid to the screen.
-
 local frame = CreateFrame("FRAME")
 
 frame:SetAllPoints(UIParent)
@@ -135,7 +134,6 @@ frame.alignGrid = function()
         end
     end
 end
-
 
 -- Holds all the UI elements for settings.
 CommandsUI = {

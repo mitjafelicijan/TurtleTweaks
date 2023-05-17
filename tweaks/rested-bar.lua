@@ -1,6 +1,5 @@
 -- Last Modified: 2023-05-09
 -- Contents: Adds rested bar to player frame.
-
 local frame = CreateFrame("FRAME")
 
 local lastRestValue = 0

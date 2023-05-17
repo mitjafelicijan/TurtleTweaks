@@ -1,7 +1,6 @@
 -- Last Modified: 2023-05-09
 -- Contents: Sets the maximum camera distance based on the slider value.
 -- FIXME: Check if the new cam distance is smaller than the current one, then set it to the new one.
-
 -- Holds all the UI elements for settings.
 CameraDistanceUI = {
     slider = nil,

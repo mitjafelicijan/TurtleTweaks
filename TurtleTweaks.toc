@@ -13,6 +13,7 @@
 ## SavedVariablesPerCharacter: Nameplates
 ## SavedVariablesPerCharacter: WorldmapWindow
 ## SavedVariablesPerCharacter: CooldownTimers
+## SavedVariablesPerCharacter: PersonalDiary
 
 # Debugging
 debug.lua
@@ -28,6 +29,7 @@ tweaks\camera-distance.lua
 tweaks\nameplates.lua
 tweaks\worldmap-window.lua
 tweaks\cooldown-timers.lua
+tweaks\personal-diary.lua
 
 # Sandbox stuff
 sandbox.lua
