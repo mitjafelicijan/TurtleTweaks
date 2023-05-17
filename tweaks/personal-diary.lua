@@ -59,10 +59,10 @@ frame:SetScript("OnEvent", function()
         end
     end
 
-    PersonalDiary.enabled = true
+    -- PersonalDiary.enabled = true
 
-    getCurrentPlayerLocation()
-    pingLocationOnMinimap(10, 10)
+    -- getCurrentPlayerLocation()
+    -- pingLocationOnMinimap(10, 10)
 end)
 
 -- Frame for
