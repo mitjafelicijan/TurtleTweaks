@@ -1,7 +1,6 @@
 -- Last Modified: 2023-05-09
 -- Contents: Opens the loot window at the current cursor position.
 -- FIXME: Close target frame when opening loot window.
-
 local frame = CreateFrame("FRAME")
 
 frame:RegisterEvent("ADDON_LOADED")
@@ -25,8 +24,10 @@ frame:SetScript("OnEvent", function()
             local scale = UIParent:GetScale()
             local lootFrame = LootFrame
 
-            lootFrame:ClearAllPoints()
-            lootFrame:SetPoint("TOPLEFT", UIParent, "BOTTOMLEFT", x / scale, y / scale)
+            if lootFrame then
+                lootFrame:ClearAllPoints()
+                lootFrame:SetPoint("TOPLEFT", UIParent, "BOTTOMLEFT", x / scale, y / scale)
+            end
         end
     end
 end)

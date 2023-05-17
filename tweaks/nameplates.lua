@@ -12,7 +12,7 @@ local frame = CreateFrame("frame")
 local nameplate = {
     base = 115,
     notch = 25,
-    height = 35,
+    height = 35
 }
 
 frame:RegisterEvent("ADDON_LOADED")
@@ -34,7 +34,7 @@ end)
 
 frame:SetScript("OnUpdate", function()
     if Nameplates and Nameplates.enabled then
-        local frames = { WorldFrame:GetChildren() }
+        local frames = {WorldFrame:GetChildren()}
         local scale = tonumber(Nameplates.config.scale)
         for _, namePlate in ipairs(frames) do
             if IsNamePlateFrame(namePlate) then

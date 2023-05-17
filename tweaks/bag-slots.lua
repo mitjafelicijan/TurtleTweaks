@@ -1,6 +1,5 @@
 -- Last Modified: 2023-05-08
 -- Contents: Adds a number of free bag slots to the backpack button.
-
 local frame = CreateFrame("FRAME")
 
 frame:RegisterEvent("ADDON_LOADED")
@@ -22,7 +21,10 @@ frame:SetScript("OnEvent", function()
     if BagSlots and BagSlots.enabled then
         if event == "PLAYER_LOGIN" or event == "BAG_UPDATE" then
             local backpackButton = MainMenuBarBackpackButton
-            if not backpackButton then return end
+            if not backpackButton then
+                return
+            end
+
             if not backpackButton.text then
                 backpackButton.text = backpackButton:CreateFontString(nil, "OVERLAY", "NumberFontNormal")
                 backpackButton.text:SetTextColor(1, 1, 1)

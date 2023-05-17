@@ -1,6 +1,5 @@
 -- Last Modified: 2023-05-09
 -- Contents: Adds settings panel and attaches a button to the main menu.
-
 local maxWidth = 570
 local maxHeight = 470
 local alreadyLoaded = false
@@ -28,7 +27,12 @@ settings:SetScript("OnEvent", function()
             tile = true,
             tileSize = 32,
             edgeSize = 32,
-            insets = { left = 11, right = 12, top = 12, bottom = 11 }
+            insets = {
+                left = 11,
+                right = 12,
+                top = 12,
+                bottom = 11
+            }
         })
 
         -- Add a title to the frame.
