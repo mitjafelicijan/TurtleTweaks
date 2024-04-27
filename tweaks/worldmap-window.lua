@@ -59,8 +59,8 @@ frame:SetScript("OnEvent", function()
             -- Fixes the world map not showing the current zone if
             -- map is already opened.
             SetMapToCurrentZone();
-            DEFAULT_CHAT_FRAME:AddMessage("ZONE_CHANGED_NEW_AREA")
-            DEFAULT_CHAT_FRAME:AddMessage("**********************************************")
+            -- DEFAULT_CHAT_FRAME:AddMessage("ZONE_CHANGED_NEW_AREA")
+            -- DEFAULT_CHAT_FRAME:AddMessage("**********************************************")
 
         end)
     end
@@ -68,8 +68,8 @@ frame:SetScript("OnEvent", function()
     -- Fixes the world map not showing the current zone.
     if WorldmapWindow and WorldmapWindow["enabled"] and event == "ZONE_CHANGED_NEW_AREA" then
         SetMapToCurrentZone();
-        DEFAULT_CHAT_FRAME:AddMessage("ZONE_CHANGED_NEW_AREA")
-        DEFAULT_CHAT_FRAME:AddMessage("**********************************************")
+        -- DEFAULT_CHAT_FRAME:AddMessage("ZONE_CHANGED_NEW_AREA")
+        -- DEFAULT_CHAT_FRAME:AddMessage("**********************************************")
     end
 end)
 

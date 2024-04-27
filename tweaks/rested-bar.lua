@@ -64,13 +64,13 @@ frame:SetScript("OnEvent", function()
             if RestedBar.config.position == "top" then
                 statusBar:SetPoint("TOPLEFT", 114, -10)
                 statusBar.bd:SetPoint("TOPLEFT", -10, 4)
-                statusBar.bd:SetTexCoord(0.0234375, 0.6875, 0.0, 1.0)
+                statusBar.bd:SetTexCoord(0.023, 0.69, 0.0, 1.0)
             end
 
             if RestedBar.config.position == "bottom" then
                 statusBar:SetPoint("BOTTOMLEFT", 114, 23)
                 statusBar.bd:SetPoint("TOPLEFT", -12, 0)
-                statusBar.bd:SetTexCoord(0.0234375, 0.6875, 1.0, 0.0)
+                statusBar.bd:SetTexCoord(0.023, 0.69, 1.0, 0.0)
             end
         end
 

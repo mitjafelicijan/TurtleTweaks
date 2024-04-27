@@ -1,7 +1,7 @@
 -- Last Modified: 2023-05-09
 -- Contents: Adds settings panel and attaches a button to the main menu.
 local maxWidth = 570
-local maxHeight = 470
+local maxHeight = 490
 local alreadyLoaded = false
 
 -- No local here since this is used in other files.
@@ -63,6 +63,7 @@ settings:SetScript("OnEvent", function()
             LootAtMouseUI.cancel()
             CommandsUI.cancel()
             CooldownTimersUI.cancel()
+            ManabarColorUI.cancel()
             CameraDistanceUI.cancel()
             NameplatesUI.cancel()
             WorldmapWindowUI.cancel()
@@ -83,6 +84,7 @@ settings:SetScript("OnEvent", function()
             LootAtMouseUI.save()
             CommandsUI.save()
             CooldownTimersUI.save()
+            ManabarColorUI.save()
             CameraDistanceUI.save()
             NameplatesUI.save()
             WorldmapWindowUI.save()
@@ -103,6 +105,7 @@ settings:SetScript("OnEvent", function()
             LootAtMouseUI.reset()
             CommandsUI.reset()
             CooldownTimersUI.reset()
+            ManabarColorUI.reset()
             CameraDistanceUI.reset()
             NameplatesUI.reset()
             WorldmapWindowUI.reset()
@@ -139,10 +142,11 @@ settings:SetScript("OnEvent", function()
         LootAtMouseUI.form(settings.container, -130)
         CommandsUI.form(settings.container, -170)
         CooldownTimersUI.form(settings.container, -210)
+        ManabarColorUI.form(settings.container, -250)
 
-        WorldmapWindowUI.form(settings.container, -295, 20)
-        NameplatesUI.form(settings.container, -295, 280)
-        CameraDistanceUI.form(settings.container, -370)
+        WorldmapWindowUI.form(settings.container, -335, 20)
+        NameplatesUI.form(settings.container, -335, 280)
+        CameraDistanceUI.form(settings.container, -410)
 
         SLASH_TurtleTweaks1 = "/vt"
         SLASH_TurtleTweaks2 = "/TurtleTweaks"
