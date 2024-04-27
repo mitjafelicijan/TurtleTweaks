@@ -113,7 +113,7 @@ settings:SetScript("OnEvent", function()
 
         -- Add a button to the game menu that opens our addon frame when clicked.
         local mainMenuButton = CreateFrame("Button", nil, GameMenuFrame, "GameMenuButtonTemplate")
-        mainMenuButton:SetPoint("TOP", GameMenuButtonUIOptions, "BOTTOM", 0, -1)
+        mainMenuButton:SetPoint("TOP", GameMenuButtonUIOptions, "BOTTOM", 0, -25)
         mainMenuButton:SetText("Turtle Tweaks")
         mainMenuButton:SetScript("OnClick", function()
             HideUIPanel(GameMenuFrame)
@@ -123,7 +123,7 @@ settings:SetScript("OnEvent", function()
         -- Add a button to the game menu that opens our addon frame when clicked.
         GameMenuButtonKeybindings:ClearAllPoints()
         GameMenuButtonKeybindings:SetPoint("TOP", mainMenuButton, "BOTTOM", 0, -1)
-        GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + 10)
+        GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + 30)
 
         -- Create a container for our settings.
         settings.container = CreateFrame("Frame", nil, settings)
