@@ -7,16 +7,6 @@ local feature = ns.Register({
 
 local frame = CreateFrame("Frame")
 
--- frame:RegisterEvent("ADDON_LOADED")
--- frame:RegisterEvent("PLAYER_ENTERING_WORLD")
--- frame:RegisterEvent("UNIT_AURA")
--- frame:RegisterEvent("UNIT_MANA")
--- frame:RegisterEvent("UPDATE_SHAPESHIFT_FORMS")
--- frame:RegisterEvent("PLAYER_TARGET_CHANGED")
--- frame:RegisterEvent("PLAYER_STATE_CHANGED")
--- frame:RegisterEvent("PLAYER_LEVEL_UP")
--- frame:RegisterEvent("PLAYER_ENTER_COMBAT")
-
 frame:RegisterAllEvents()
 
 frame:SetScript("OnEvent", function()
