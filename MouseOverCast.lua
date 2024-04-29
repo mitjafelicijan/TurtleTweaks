@@ -41,13 +41,12 @@ frame:SetScript("OnEvent", function()
     SlashCmdList["STCAST"] = function(msg, editbox)
       local spell = msg or nil
       local unit = MouseoverUnit()
-      if not unit then unit = "player" end
       
-      if spell then
-        -- TargetUnit(unit)
-        SpellTargetUnit(unit, 1)
+      if unit and spell then
+        TargetUnit(unit)
+        SpellTargetUnit(unit)
         CastSpellByName(spell)
-        -- TargetLastTarget()
+        TargetLastTarget()
       end
     end
   end
