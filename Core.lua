@@ -7,7 +7,7 @@ end
 ns = {}
 ns.Features = {}
 ns.Config = {
-  ManaBarColor = { r = 0.0, g = 0.6, b = 1 }
+  ManaBarColor = { r = 0.0, g = 0.7, b = 1 },
 }
 
 ns.Register = function(feature)
