@@ -12,6 +12,7 @@ frame:RegisterEvent("SPELLCAST_FAILED")
 frame:RegisterEvent("SPELLCAST_STOP")
 frame:RegisterEvent("SPELLCAST_INTERRUPTED")
 frame:RegisterEvent("LOOT_OPENED")
+frame:RegisterEvent("SPELL_UPDATE_COOLDOWN")
 
 frame:SetScript("OnEvent", function()
   if not ns.IsEnabled(feature.identifier) then return end
