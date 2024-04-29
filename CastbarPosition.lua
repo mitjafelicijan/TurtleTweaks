@@ -14,6 +14,8 @@ frame:RegisterEvent("DISPLAY_SIZE_CHANGED")
 frame:RegisterEvent("UNIT_SPELLCAST_SENT")
 frame:RegisterEvent("SPELL_UPDATE_USABLE")
 frame:RegisterEvent("UNIT_AURA")
+frame:RegisterEvent("SPELLCAST_START")
+frame:RegisterEvent("CURRENT_SPELL_CAST_CHANGED")
 
 frame:SetScript("OnEvent", function()
   if not ns.IsEnabled(feature.identifier) then return end
