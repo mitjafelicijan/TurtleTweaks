@@ -19,7 +19,7 @@ frame:RegisterEvent("ADDON_LOADED")
 frame:SetScript("OnEvent", function()
   if event == "ADDON_LOADED" and not config.loaded then
     frame:EnableMouse(true)
-    -- frame:Hide()
+    frame:Hide()
 
     frame:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
     frame:SetWidth(config.width)
