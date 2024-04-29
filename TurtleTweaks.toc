@@ -64,6 +64,7 @@ MouseOverCast.lua
 NameplateScaling.lua
 RestedXpTooltip.lua
 SellGrayItems.lua
+CooldownNumbers.lua
 
 Settings.lua
 >>>>>>> 085cf90 (Engage)
