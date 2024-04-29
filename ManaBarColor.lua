@@ -7,6 +7,7 @@ local feature = ns.Register({
 
 local frame = CreateFrame("Frame")
 
+-- NOTE: This is not idea, listening to all event, but the list was getting a bit long.
 frame:RegisterAllEvents()
 
 frame:SetScript("OnEvent", function()
