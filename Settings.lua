@@ -19,7 +19,7 @@ frame:RegisterEvent("ADDON_LOADED")
 frame:SetScript("OnEvent", function()
   if event == "ADDON_LOADED" and not config.loaded then
     frame:EnableMouse(true)
-    frame:Hide()
+    -- frame:Hide()
 
     frame:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
     frame:SetWidth(config.width)
@@ -27,39 +27,28 @@ frame:SetScript("OnEvent", function()
 
     -- Create a backdrop for our addon.
     frame:SetBackdrop({
-      bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background",
-      edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
+      bgFile = "Interface\\AddOns\\TurtleTweaks\\UI\\BG",
+      edgeFile = "Interface\\AddOns\\TurtleTweaks\\UI\\Border",
       tile = true,
-      tileSize = 32,
+      tileSize = 128,
       edgeSize = 32,
-      insets = {
-        left = 11,
-        right = 12,
-        top = 12,
-        bottom = 11
-      }
+      insets = { left = 6, right = 6, top = 6, bottom = 6 }
     })
 
-    -- Add a title to the frame.
-    frame.title = CreateFrame("Frame", nil, frame)
-    frame.title:SetPoint("TOP", frame, "TOP", 0, 12)
-    frame.title:SetWidth(256)
-    frame.title:SetHeight(64)
-
-    -- Create a backdrop for the title.
-    frame.title.tex = frame.title:CreateTexture(nil, "MEDIUM")
-    frame.title.tex:SetTexture("Interface\\DialogFrame\\UI-DialogBox-Header")
-    frame.title.tex:SetAllPoints()
-
     -- Create a font string for the title.
-    frame.title.text = frame.title:CreateFontString(nil, "HIGH", "GameFontNormal")
-    frame.title.text:SetText("Turtle Tweaks")
-    frame.title.text:SetPoint("TOP", 0, -14)
+    frame.title = frame:CreateFontString(nil, "HIGH", "GameFontNormal")
+    frame.title:SetText("Turtle Tweaks")
+    frame.title:SetPoint("TOP", 0, -5)
+
+    -- Create a close button.
+    local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
+    close:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 3, 4)
+    close:SetScript("OnClick", function() frame:Hide() end)
 
     -- Create scrollable frame.
     frame.scrollFrame = CreateFrame("ScrollFrame", "TurtleTweaksSettings", frame, "UIPanelScrollFrameTemplate")
-    frame.scrollFrame:SetPoint("TOPLEFT", frame, "TOPLEFT", 6, -40)
-    frame.scrollFrame:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -36, 52)
+    frame.scrollFrame:SetPoint("TOPLEFT", frame, "TOPLEFT", 6, -26)
+    frame.scrollFrame:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -30, 42)
 
     local child = CreateFrame("Frame", nil, frame.scrollFrame)
     child:SetWidth(frame:GetWidth())
@@ -77,13 +66,13 @@ frame:SetScript("OnEvent", function()
       yOffset = yOffset + 10
 
       local title = child:CreateFontString(nil, "OVERLAY", "GameFontHighlightLarge")
-      title:SetPoint("TOPLEFT", 30, -yOffset)
+      title:SetPoint("TOPLEFT", 20, -yOffset)
       title:SetText(data.label)
       yOffset = yOffset + 20
 
       for _, item in ipairs(data.items) do
         local checkbox = CreateFrame("CheckButton", nil, child, "UICheckButtonTemplate")
-        checkbox:SetPoint("TOPLEFT", 40, -yOffset)
+        checkbox:SetPoint("TOPLEFT", 30, -yOffset)
         checkbox.identifier = item.identifier
       
         if TurtleTweaksDB[item.identifier] ~= nil then
@@ -108,7 +97,7 @@ frame:SetScript("OnEvent", function()
     end
 
     local apply = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
-    apply:SetPoint("BOTTOMRIGHT", -20, 18)
+    apply:SetPoint("BOTTOMRIGHT", -12, 12)
     apply:SetWidth(70)
     apply:SetHeight(22)
     apply:SetText("Apply")
@@ -117,7 +106,7 @@ frame:SetScript("OnEvent", function()
     end)
 
     local cancel = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
-    cancel:SetPoint("BOTTOMRIGHT", -100, 18)
+    cancel:SetPoint("BOTTOMRIGHT", -90, 12)
     cancel:SetWidth(70)
     cancel:SetHeight(22)
     cancel:SetText("Cancel")
