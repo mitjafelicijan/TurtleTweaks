@@ -9,6 +9,7 @@ local feature = ns.Register({
   config = {
     cmds = {
       "bspcache",
+      "gxFixLag",
       "gxTripleBuffer",
       "M2UsePixelShaders",
       "M2UseZFill",

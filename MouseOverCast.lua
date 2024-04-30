@@ -35,11 +35,11 @@ frame:SetScript("OnEvent", function()
     SlashCmdList["STCAST"] = function(msg, editbox)
       local spell = msg or nil
       local unit = MouseoverUnit()
-      local restoreTarget = false
+      local restoreHostileTarget = false
 
       -- Target hostile. Will need to revert back to it.
       if UnitCanAttack("player", "target") then
-        restoreTarget = true
+        restoreHostileTarget = true
       end
 
       TargetUnit(unit)
@@ -47,7 +47,7 @@ frame:SetScript("OnEvent", function()
       CastSpellByName(spell)
 
       -- Restoring back to the hostile target.
-      if restoreTarget then
+      if restoreHostileTarget then
         TargetLastEnemy()
       end
     end

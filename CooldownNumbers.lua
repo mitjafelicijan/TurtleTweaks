@@ -12,7 +12,7 @@ local feature = ns.Register({
 
 local frame = CreateFrame("Frame")
 
-frame:RegisterEvent("ADDON_LOADED")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 
 frame:SetScript("OnEvent", function()
   if not ns.IsEnabled(feature.identifier) then return end
