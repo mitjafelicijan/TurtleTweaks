@@ -1,6 +1,6 @@
 local feature = ns.Register({
   identifier = "MouseOverCast",
-  description = "Enables /stcast command that uses mouseover to detect the unit.",
+  description = "Enables /mcast command that uses mouseover to detect the unit.",
   category = "utility",
   config = {}
 })
@@ -15,19 +15,13 @@ local function MouseoverUnit()
   if not UnitExists(unit) then
     local frame = GetMouseFocus()
     local fparent = frame:GetParent()
-    if frame.label and frame.id then
-      unit = frame.label .. frame.id
-    elseif frame.unit then
-      unit = frame.unit
-    elseif fparent and fparent.unit then
-      unit = fparent.unit
-    elseif UnitExists("target") then
-      unit = "target"
-    elseif GetCVar("autoSelfCast") == "1" then
-      unit = "player"
-    else
-      unit = nil
-    end
+    
+    if frame.label and frame.id then unit = frame.label .. frame.id
+    elseif frame.unit then unit = frame.unit
+    elseif fparent and fparent.unit then unit = fparent.unit
+    elseif UnitExists("target") then unit = "target"
+    elseif GetCVar("autoSelfCast") == "1" then unit = "player"
+    else unit = nil end
   end
 
   return unit
@@ -37,16 +31,24 @@ frame:SetScript("OnEvent", function()
   if not ns.IsEnabled(feature.identifier) then return end
 
   do
-    SLASH_STCAST1 = "/stcast"
+    SLASH_STCAST1 = "/mcast"
     SlashCmdList["STCAST"] = function(msg, editbox)
       local spell = msg or nil
       local unit = MouseoverUnit()
-      
-      if unit and spell then
-        TargetUnit(unit)
-        SpellTargetUnit(unit)
-        CastSpellByName(spell)
-        TargetLastTarget()
+      local restoreTarget = false
+
+      -- Target hostile. Will need to revert back to it.
+      if UnitCanAttack("player", "target") then
+        restoreTarget = true
+      end
+
+      TargetUnit(unit)
+      SpellTargetUnit(unit)
+      CastSpellByName(spell)
+
+      -- Restoring back to the hostile target.
+      if restoreTarget then
+        TargetLastEnemy()
       end
     end
   end
