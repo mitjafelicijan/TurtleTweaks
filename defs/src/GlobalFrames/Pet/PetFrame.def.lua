@@ -1,2 +1,0 @@
----@class PetFrame: Button
-PetFrame = {}

@@ -1,2 +1,0 @@
----@class NumberFontNormalHuge: Font
-NumberFontNormalHuge = {}

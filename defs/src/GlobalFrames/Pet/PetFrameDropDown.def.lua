@@ -1,2 +1,0 @@
----@class PetFrameDropDown: UIDropDownMenuButtonTemplate
-PetFrameDropDown = {}

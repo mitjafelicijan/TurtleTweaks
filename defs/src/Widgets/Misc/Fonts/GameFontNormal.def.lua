@@ -1,2 +1,0 @@
----@class GameFontNormal: MasterFont
-GameFontNormal = {}

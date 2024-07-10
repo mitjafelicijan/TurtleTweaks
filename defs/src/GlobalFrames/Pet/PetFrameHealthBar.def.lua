@@ -1,2 +1,0 @@
----@class PetFrameHealthBar: TextStatusBar
-PetFrameHealthBar = {}

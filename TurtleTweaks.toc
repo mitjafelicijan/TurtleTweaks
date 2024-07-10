@@ -1,48 +1,8 @@
 ## Interface: 11200
-<<<<<<< HEAD
-## Title: TurtleTweaks
-## Author: Mitja Felicijan (m@mitjafelicijan.com)
-## Notes: A bunch of tweaks for Vanilla WoW.
-## Version: 0.5
-
-## SavedVariablesPerCharacter: Debug
-## SavedVariablesPerCharacter: Sandbox
-## SavedVariablesPerCharacter: Commands
-## SavedVariablesPerCharacter: LootAtMouse
-## SavedVariablesPerCharacter: BagSlots
-## SavedVariablesPerCharacter: RestedBar
-## SavedVariablesPerCharacter: Nameplates
-## SavedVariablesPerCharacter: WorldmapWindow
-## SavedVariablesPerCharacter: CooldownTimers
-## SavedVariablesPerCharacter: PersonalDiary
-## SavedVariablesPerCharacter: ManabarColor
-
-# Debugging
-debug.lua
-
-# Commands
-tweaks\commands.lua
-
-# Tweaks
-tweaks\rested-bar.lua
-tweaks\loot-at-mouse.lua
-tweaks\bag-slots.lua
-tweaks\camera-distance.lua
-tweaks\nameplates.lua
-tweaks\worldmap-window.lua
-tweaks\cooldown-timers.lua
-tweaks\manabar-color.lua
-
-# Sandbox stuff
-sandbox.lua
-
-# UI stuff
-settings.lua
-=======
 ## Title: Turtle Tweaks
 ## Author: Mitja Felicijan (mitja.felicijan@gmail.com)
 ## Notes: A bunch of tweaks for Vanilla WoW.
-## Version: 0.5
+## Version: 0.6
 ## SavedVariablesPerCharacter: TurtleTweaksDB
 
 Data\WoWCodexArmor.lua
@@ -57,12 +17,10 @@ ChatScrolling.lua
 CompareTooltip.lua
 CooldownNumbers.lua
 EnvironmentGlow.lua
-FixCastbarVisibility.lua
 FreeBagSlots.lua
 ItemLevel.lua
 LootAtMouse.lua
 ManaBarColor.lua
-ManaEnergyTick.lua
 MaxCameraZoom.lua
 MinimapClock.lua
 MouseOverCast.lua
@@ -70,9 +28,12 @@ NameplateScaling.lua
 RestedXpTooltip.lua
 SellGrayItems.lua
 
+ExtendedMacros.lua
+
 # In progress or broken.
 # GameplaySmoothness.lua
 # ItemValue.lua
+# ManaEnergyTick.lua
+# FixCastbarVisibility.lua
 
 Settings.lua
->>>>>>> 085cf90 (Engage)

@@ -1,2 +1,0 @@
----@class PetActionBarFrame: Frame
-PetActionBarFrame = {}

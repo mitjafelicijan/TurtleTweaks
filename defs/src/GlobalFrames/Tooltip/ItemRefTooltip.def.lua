@@ -1,2 +1,0 @@
----@class ItemRefTooltip: GameTooltip
-ItemRefTooltip = {}
