@@ -1,4 +1,5 @@
 ## Interface: 11200
+<<<<<<< HEAD
 ## Title: TurtleTweaks
 ## Author: Mitja Felicijan (m@mitjafelicijan.com)
 ## Notes: A bunch of tweaks for Vanilla WoW.
@@ -37,3 +38,32 @@ sandbox.lua
 
 # UI stuff
 settings.lua
+=======
+## Title: Turtle Tweaks
+## Author: Mitja Felicijan (mitja.felicijan@gmail.com)
+## Notes: A bunch of tweaks for Vanilla WoW.
+## Version: 0.5
+## SavedVariablesPerCharacter: TurtleTweaksDB
+
+Core.lua
+
+AutoRepair.lua
+CastbarPosition.lua
+ChatArrowKeys.lua
+ChatScrolling.lua
+CompareTooltip.lua
+EnvironmentGlow.lua
+FixCastbarVisibility.lua
+FreeBagSlots.lua
+GameplaySmoothness.lua
+LootAtMouse.lua
+ManaBarColor.lua
+MaxCameraZoom.lua
+MinimapClock.lua
+MouseOverCast.lua
+NameplateScaling.lua
+RestedXpTooltip.lua
+SellGrayItems.lua
+
+Settings.lua
+>>>>>>> 085cf90 (Engage)
