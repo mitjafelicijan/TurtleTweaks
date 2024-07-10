@@ -9,6 +9,7 @@ local config = {
     utility = { label = "Utilities", items = {} },
     social = { label = "Social & Chat", items = {} },
     automation = { label = "Automation", items = {} },
+    profession = { label = "Professions", items = {} },
   }
 }
 

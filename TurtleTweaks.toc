@@ -17,6 +17,8 @@ ChatScrolling.lua
 CompareTooltip.lua
 CooldownNumbers.lua
 EnvironmentGlow.lua
+ExtendedMacros.lua
+FishingAudio.lua
 FreeBagSlots.lua
 ItemLevel.lua
 LootAtMouse.lua
@@ -27,8 +29,6 @@ MouseOverCast.lua
 NameplateScaling.lua
 RestedXpTooltip.lua
 SellGrayItems.lua
-
-ExtendedMacros.lua
 
 # In progress or broken.
 # GameplaySmoothness.lua
