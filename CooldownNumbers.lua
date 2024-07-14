@@ -37,7 +37,8 @@ frame:SetScript("OnEvent", function()
 
           cooldownFrame.countdownTimer:SetScript("OnUpdate", function()
             if this.label then
-              local remaining = math.abs((start + duration) - GetTime())
+              -- local remaining = math.abs((start + duration) - GetTime())
+              local remaining = (GetTime() - (start + duration)) * -1
               local labelText = nil
               
               if remaining >= 3600 then
