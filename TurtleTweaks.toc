@@ -27,6 +27,7 @@ MaxCameraZoom.lua
 MinimapClock.lua
 MouseOverCast.lua
 NameplateScaling.lua
+OnlyASCII.lua
 RestedXpTooltip.lua
 SellGrayItems.lua
 

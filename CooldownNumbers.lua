@@ -46,7 +46,7 @@ frame:SetScript("OnEvent", function()
               elseif remaining >= 90 then
                 labelText = string.format("%dm", math.ceil(remaining / 60))
               elseif remaining < 90 then
-                labelText = string.format("%ds", math.ceil(remaining))
+                labelText = string.format("%d", math.ceil(remaining))
               end
 
               this.label:SetText(labelText)

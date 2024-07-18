@@ -42,6 +42,8 @@ local frame = CreateFrame("Frame")
 
 frame:RegisterEvent("SPELLCAST_CHANNEL_START")
 frame:RegisterEvent("SPELLCAST_CHANNEL_STOP")
+frame:RegisterEvent("SPELLCAST_INTERRUPTED")
+frame:RegisterEvent("PLAYER_LOGOUT")
 
 frame:SetScript("OnEvent", function()
   if not ns.IsEnabled(feature.identifier) then return end
@@ -52,9 +54,7 @@ frame:SetScript("OnEvent", function()
       fishingSoundSettings()
       feature.data.fishingInProgress = true
     end
-  end
-
-  if event == "SPELLCAST_CHANNEL_STOP" then
+  else
     if feature.data.fishingInProgress then
       restoreSoundSettings()
       feature.data.fishingInProgress = false
