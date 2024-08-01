@@ -30,6 +30,7 @@ NameplateScaling.lua
 OnlyASCII.lua
 RestedXpTooltip.lua
 SellGrayItems.lua
+SoloSelfFound.lua
 
 # In progress or broken.
 # GameplaySmoothness.lua
