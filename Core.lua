@@ -87,3 +87,11 @@ function GetCoinText(money)
 
   return table.concat(parts, " ")
 end 
+
+-- Usage: DebugPlaceholder(_G["BuffFrame"], 0, 0, 1, 0.3)
+function DebugPlaceholder(node, r, g, b, a)
+  node.t = node:CreateTexture(nil, "BACKGROUND")
+  node.t:SetAllPoints(node)
+  node.t:SetTexture(r, g, b, a)
+  node:Show()
+end

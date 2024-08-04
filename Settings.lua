@@ -25,6 +25,7 @@ frame:SetScript("OnEvent", function()
     frame:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
     frame:SetWidth(config.width)
     frame:SetHeight(config.height)
+    frame:SetFrameStrata("HIGH")
 
     -- Create a backdrop for our addon.
     frame:SetBackdrop({

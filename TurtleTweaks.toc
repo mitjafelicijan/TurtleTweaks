@@ -15,17 +15,19 @@ CastbarPosition.lua
 ChatArrowKeys.lua
 ChatScrolling.lua
 CompareTooltip.lua
-CooldownNumbers.lua
+# CooldownNumbers.lua
 EnvironmentGlow.lua
 ExtendedMacros.lua
 FishingAudio.lua
 FreeBagSlots.lua
-ItemLevel.lua
+# ItemLevel.lua
 LootAtMouse.lua
 ManaBarColor.lua
 MaxCameraZoom.lua
 MinimapClock.lua
+MiniPlayerFrame.lua
 MouseOverCast.lua
+# NameplatePosition.lua
 NameplateScaling.lua
 OnlyASCII.lua
 RestedXpTooltip.lua
