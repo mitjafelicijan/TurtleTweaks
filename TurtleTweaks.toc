@@ -41,3 +41,4 @@ SoloSelfFound.lua
 # FixCastbarVisibility.lua
 
 Settings.lua
+
