@@ -46,8 +46,8 @@ frame:SetScript("OnEvent", function()
   local power = UnitPowerType("player")
   local currentHealth = UnitHealth("player")
   local maxHealth = UnitHealthMax("player")
-  local currentMana = UnitMana("player")
-  local maxMana = UnitManaMax("player")
+  local currentPower = UnitMana("player")
+  local maxPower = UnitManaMax("player")
 
   if event == "ADDON_LOADED" and not feature.data.initialized then
     frame:SetPoint("CENTER", UIParent, "CENTER", 0, -feature.config.offset)
@@ -79,7 +79,7 @@ frame:SetScript("OnEvent", function()
     frame.primary:EnableMouse(false)
 
     -- Setting up the texture.
-    frame.border = frame:CreateTexture(nil, "OVERLAY")
+    frame.border = frame:CreateTexture(nil, "BORDER")
     frame.border:SetTexture("Interface\\AddOns\\TurtleTweaks\\UI\\MiniUnitFrame.tga")
     frame.border:SetAllPoints(frame)
     frame.border:SetTexCoord(0, 1, 0, 0.5)
@@ -109,7 +109,9 @@ frame:SetScript("OnEvent", function()
       if power == 0 or power == 2 then
         frame.border:SetTexCoord(0.0, 1.0, 0.0, 0.5) -- two slot
       else
-        frame.border:SetTexCoord(0.0, 1.0, 0.5, 1.0) -- three slot
+        frame.border:SetTexCoord(0.0, 1.0, 0.0, 0.5) -- two slot
+        -- TODO: Not implemented yet. Getting mana in shapeshifting form is not trivial.
+        -- frame.border:SetTexCoord(0.0, 1.0, 0.5, 1.0) -- three slot
       end
     end
 
@@ -127,8 +129,8 @@ frame:SetScript("OnEvent", function()
     frame.health:Show()
 
     -- Update primary bar.
-    frame.primary:SetMinMaxValues(0, maxMana)
-    frame.primary:SetValue(currentMana)
+    frame.primary:SetMinMaxValues(0, maxPower)
+    frame.primary:SetValue(currentPower)
     frame.primary:Show()
   end
 end)
